@@ -49,11 +49,20 @@ function parseFrontmatter(raw) {
 
 const statusOrder = { live: 1, building: 2, paused: 3, archived: 4, idea: 5 }
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+function resolveAsset(path) {
+  if (!path) return path
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) return path
+  return BASE + path
+}
+
 export const projects = Object.entries(modules)
   .map(([path, raw]) => {
     const { frontmatter, body } = parseFrontmatter(raw)
     return {
       ...frontmatter,
+      screenshot: resolveAsset(frontmatter.screenshot),
       bodyHtml: marked.parse(body),
       path
     }
