@@ -1,0 +1,90 @@
+:root {
+  --bg: #0e0c0a;
+  --bg-card: #181513;
+  --bg-card-hover: #1e1a17;
+  --border: #2a2622;
+  --border-strong: #3a342e;
+  --text: #ebe7e3;
+  --text-muted: #9a948e;
+
+  --accent: #4ade80;
+  --accent-hover: #5eea91;
+  --accent-dim: rgba(74, 222, 128, 0.16);
+
+  --font-serif: "Iowan Old Style", "Palatino Linotype", "Palatino", "Baskerville", Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  background-image: radial-gradient(ellipse at top, rgba(255, 235, 200, 0.022), transparent 60%);
+}
+
+a { color: inherit; }
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* Skip-to-content link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+}
+
+/* Replace default browser focus outline */
+:focus { outline: none; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="psbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0c14"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#psbg)"/>
+
+  <text x="80" y="120" font-family="Iowan Old Style, Georgia, serif" font-size="48" fill="#e6edf3" font-weight="500">learn the rhythm with a partner</text>
+  <text x="80" y="156" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#7d8590" letter-spacing="3">HOUSE OF AYRE / 05 · PAIR SESSIONS FOR DESIGNERS</text>
+
+  <g transform="translate(80, 220)">
+    <rect width="1440" height="680" rx="14" fill="#141414" stroke="#262626"/>
+
+    <g transform="translate(60, 60)">
+      <circle cx="40" cy="40" r="40" fill="#c4b5fd"/>
+      <text x="40" y="48" font-family="-apple-system" font-size="28" fill="#0a0a0a" text-anchor="middle" font-weight="600">A</text>
+
+      <circle cx="120" cy="40" r="40" fill="#4ade80"/>
+      <text x="120" y="48" font-family="-apple-system" font-size="28" fill="#0a0a0a" text-anchor="middle" font-weight="600">+</text>
+
+      <text x="180" y="28" font-family="Iowan Old Style, Georgia, serif" font-size="26" fill="#e6edf3" font-weight="500">facilitator + designer</text>
+      <text x="180" y="56" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#7d8590" letter-spacing="2">PAIRED ON ONE REAL TASK</text>
+    </g>
+
+    <g transform="translate(60, 200)">
+      <text font-family="Iowan Old Style, Georgia, serif" font-size="34" fill="#e6edf3" font-weight="500">Session 1 · My turn</text>
+      <text y="36" font-family="-apple-system" font-style="italic" font-size="16" fill="#a8a8a8">Facilitator drives. You watch, ask questions, interrupt anytime.</text>
+
+      <g transform="translate(0, 84)">
+        <rect width="420" height="320" rx="10" fill="#0d0d0d" stroke="#262626"/>
+        <text x="20" y="36" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#c4b5fd" letter-spacing="2">PART 1 · 10 MIN</text>
+        <text x="20" y="64" font-family="-apple-system" font-size="16" fill="#e6edf3" font-weight="600">Why this matters</text>
+        <text x="20" y="100" font-family="-apple-system" font-size="13" fill="#a8a8a8">Not to make you an engineer.</text>
+        <text x="20" y="120" font-family="-apple-system" font-size="13" fill="#a8a8a8">To give you enough understanding</text>
+        <text x="20" y="140" font-family="-apple-system" font-size="13" fill="#a8a8a8">of the medium to evaluate output,</text>
+        <text x="20" y="160" font-family="-apple-system" font-size="13" fill="#a8a8a8">join technical conversations, and</text>
+        <text x="20" y="180" font-family="-apple-system" font-size="13" fill="#a8a8a8">make your case for users in terms</text>
+        <text x="20" y="200" font-family="-apple-system" font-size="13" fill="#a8a8a8">that land.</text>
+        <text x="20" y="244" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#7d8590">"That's the bar. That's what this</text>
+        <text x="20" y="264" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#7d8590">session is about."</text>
+      </g>
+
+      <g transform="translate(450, 84)">
+        <rect width="420" height="320" rx="10" fill="#0d0d0d" stroke="#3a3a3a"/>
+        <text x="20" y="36" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#4ade80" letter-spacing="2">PART 2 · 30–40 MIN</text>
+        <text x="20" y="64" font-family="-apple-system" font-size="16" fill="#e6edf3" font-weight="600">Live walkthrough</text>
+        <text x="20" y="100" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Research · two tracks</text>
+        <text x="20" y="124" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Persisting useful queries</text>
+        <text x="20" y="148" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Problem framing</text>
+        <text x="20" y="172" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Starting the build</text>
+        <text x="20" y="196" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Shaping</text>
+        <text x="20" y="220" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Breadboarding</text>
+        <text x="20" y="264" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#7d8590">No slides. No prepared demo.</text>
+        <text x="20" y="284" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#7d8590">Real, in-flight work.</text>
+      </g>
+
+      <g transform="translate(900, 84)">
+        <rect width="420" height="320" rx="10" fill="#0d0d0d" stroke="#262626"/>
+        <text x="20" y="36" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#fbbf24" letter-spacing="2">PART 3 · 10 MIN</text>
+        <text x="20" y="64" font-family="-apple-system" font-size="16" fill="#e6edf3" font-weight="600">Open conversation</text>
+        <text x="20" y="100" font-family="-apple-system" font-size="13" fill="#a8a8a8">What worries you most about this?</text>
+        <text x="20" y="124" font-family="-apple-system" font-size="13" fill="#a8a8a8">What surprised you?</text>
+        <text x="20" y="148" font-family="-apple-system" font-size="13" fill="#a8a8a8">What did you expect to be harder</text>
+        <text x="20" y="168" font-family="-apple-system" font-size="13" fill="#a8a8a8">than it looked?</text>
+        <text x="20" y="244" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#7d8590">"No wrong answers. We get the fear</text>
+        <text x="20" y="264" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#7d8590">on the table so we can work through it."</text>
+      </g>
+
+      <g transform="translate(0, 444)">
+        <text font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590" letter-spacing="2">NEXT SESSIONS</text>
+        <text y="28" font-family="-apple-system" font-size="14" fill="#a8a8a8">Session 2 · Your turn — you drive the build · Session 3 · Shipping and design judgment</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="1520" y="980" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#444" text-anchor="end">house of ayre</text>
+</svg>

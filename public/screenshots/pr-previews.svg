@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="prbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1424"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <pattern id="prgrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#prbg)"/>
+  <rect width="1600" height="1000" fill="url(#prgrid)"/>
+
+  <text x="80" y="120" font-family="Iowan Old Style, Georgia, serif" font-size="48" fill="#e6edf3" font-weight="500">previews that don't die</text>
+  <text x="80" y="156" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#7d8590" letter-spacing="3">HOUSE OF AYRE / 01</text>
+
+  <g transform="translate(80, 220)">
+    <rect width="1440" height="680" rx="16" fill="#0d1117" stroke="#30363d"/>
+    <rect width="1440" height="56" rx="16" fill="#161b22"/>
+    <rect y="42" width="1440" height="14" fill="#161b22"/>
+    <circle cx="30" cy="28" r="6" fill="#ff5f56"/>
+    <circle cx="52" cy="28" r="6" fill="#ffbd2e"/>
+    <circle cx="74" cy="28" r="6" fill="#27c93f"/>
+    <text x="720" y="33" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#7d8590" text-anchor="middle">github.com/dialpad/design-studio/pull/246</text>
+
+    <text x="48" y="128" font-family="-apple-system, Helvetica" font-size="26" fill="#e6edf3" font-weight="600">feat(prototypes): credits and usage page improvements</text>
+    <text x="48" y="162" font-family="-apple-system, Helvetica" font-size="14" fill="#7d8590">#246 · open · amitdialpad wants to merge 12 commits into main</text>
+
+    <g transform="translate(48, 200)">
+      <rect width="186" height="36" rx="18" fill="#0d2818" stroke="#2ea043"/>
+      <circle cx="24" cy="18" r="5" fill="#2ea043"/>
+      <text x="42" y="23" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#3fb950" letter-spacing="2">PREVIEW LIVE</text>
+    </g>
+    <text x="252" y="223" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#7d8590">refreshed 2026-05-11 14:00 IST · cleanup reset +14 days</text>
+
+    <g transform="translate(48, 296)">
+      <text font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590" letter-spacing="2">CLEANUP COUNTDOWN — RESET DAILY BY CRON</text>
+
+      <g transform="translate(0, 34)">
+        <text y="-8" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#7d8590">day 1</text>
+        <text x="1340" y="-8" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#7d8590" text-anchor="end">day 14</text>
+
+        <rect width="1340" height="14" rx="7" fill="#21262d"/>
+        <rect width="120" height="14" rx="7" fill="#1f6feb"/>
+
+        <g fill="#f0b429">
+          <circle cx="100" cy="7" r="5"/>
+          <circle cx="200" cy="7" r="5"/>
+          <circle cx="300" cy="7" r="5"/>
+          <circle cx="400" cy="7" r="5"/>
+          <circle cx="500" cy="7" r="5"/>
+          <circle cx="600" cy="7" r="5"/>
+          <circle cx="700" cy="7" r="5"/>
+          <circle cx="800" cy="7" r="5"/>
+          <circle cx="900" cy="7" r="5"/>
+          <circle cx="1000" cy="7" r="5"/>
+          <circle cx="1100" cy="7" r="5"/>
+          <circle cx="1200" cy="7" r="5"/>
+          <circle cx="1300" cy="7" r="5"/>
+        </g>
+
+        <text y="44" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#f0b429">↑ 2PM refresh marker (invisible in rendered markdown, visible to GitHub)</text>
+      </g>
+    </g>
+
+    <g transform="translate(48, 444)">
+      <rect width="1340" height="180" rx="10" fill="#010409" stroke="#30363d"/>
+      <text x="20" y="32" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590" letter-spacing="2">PR DESCRIPTION — RAW SOURCE</text>
+
+      <text font-family="ui-monospace, Menlo, monospace" font-size="14" x="20" y="72">
+        <tspan fill="#8b949e">&lt;!--</tspan>
+        <tspan fill="#f0b429"> house-of-air/extend:: 2026-05-11T14:00:00 </tspan>
+        <tspan fill="#8b949e">--&gt;</tspan>
+      </text>
+
+      <text font-family="ui-monospace, Menlo, monospace" font-size="13" x="20" y="108" fill="#7d8590">## Summary</text>
+      <text font-family="ui-monospace, Menlo, monospace" font-size="13" x="20" y="132" fill="#e6edf3">Credits and usage page improvements per Abby/Ceci feedback.</text>
+      <text font-family="ui-monospace, Menlo, monospace" font-size="13" x="20" y="156" fill="#e6edf3">Adds infinite scroll, rate column, AI service breakdown.</text>
+    </g>
+  </g>
+
+  <text x="1520" y="980" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#444" text-anchor="end">house of ayre</text>
+</svg>

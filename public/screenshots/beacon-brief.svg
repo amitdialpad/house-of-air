@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bbbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14120c"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bbbg)"/>
+
+  <text x="80" y="120" font-family="Iowan Old Style, Georgia, serif" font-size="48" fill="#e6edf3" font-weight="500">a weekly note on what shipped</text>
+  <text x="80" y="156" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#7d8590" letter-spacing="3">HOUSE OF AYRE / 04 · BEACON BRIEF · MONDAYS AT 10 IST</text>
+
+  <g transform="translate(80, 220)">
+    <rect width="1440" height="680" rx="14" fill="#141414" stroke="#262626"/>
+
+    <g transform="translate(0, 0)">
+      <rect width="1440" height="60" rx="14" fill="#0d0d0d"/>
+      <rect y="46" width="1440" height="14" fill="#0d0d0d"/>
+      <text x="32" y="36" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#7d8590">From: amit.ayre@dialpad.com</text>
+      <text x="32" y="36" dx="380" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#7d8590">To: design-team (bcc, 25)</text>
+      <text x="32" y="36" dx="780" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#7d8590">Subject: Beacon Brief · Week of May 4</text>
+    </g>
+
+    <g transform="translate(60, 100)">
+      <text font-family="Iowan Old Style, Georgia, serif" font-size="28" fill="#e6edf3" font-weight="500">What's new in Beacon this week</text>
+      <text y="32" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590" letter-spacing="2">3 RELEASES · CURATED FOR DESIGNERS</text>
+
+      <g transform="translate(0, 78)">
+        <rect width="1320" height="92" rx="10" fill="#0d0d0d" stroke="#262626"/>
+        <text x="20" y="28" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#facc15" letter-spacing="2">TL;DR</text>
+        <text x="20" y="54" font-family="-apple-system" font-size="14" fill="#e6edf3">› DtDatepicker now respects locale week conventions (weekStartsOn prop)</text>
+        <text x="20" y="74" font-family="-apple-system" font-size="14" fill="#e6edf3">› DtSplitButton landed for export and send actions</text>
+      </g>
+
+      <g transform="translate(0, 200)">
+        <text font-family="-apple-system" font-size="20" fill="#e6edf3" font-weight="700">DtDatepicker · configurable week start</text>
+        <text y="28" font-family="-apple-system" font-size="14" fill="#a8a8a8">If you've ever shown a calendar to a designer in Paris and watched their face do a small wince when the week starts on Sunday — this fixes that. New `weekStartsOn` prop, locale-aware default, no breaking change for existing usage.</text>
+        <text y="56" font-family="-apple-system" font-size="14" fill="#a8a8a8">Ask Ted if you're using this in a date range picker — there's a subtlety with the range highlight he sorted out.</text>
+        <text y="92" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#525252" letter-spacing="1">v2026.5.11 · 11 May</text>
+      </g>
+
+      <line x1="0" y1="320" x2="1320" y2="320" stroke="#1f1f1f"/>
+
+      <g transform="translate(0, 348)">
+        <text font-family="-apple-system" font-size="20" fill="#e6edf3" font-weight="700">DtSplitButton · primary + dropdown</text>
+        <text y="28" font-family="-apple-system" font-size="14" fill="#a8a8a8">One button, two affordances stacked. Use it when there's a main action plus less-frequent variants — export now / schedule export / copy rows. Replaces four ad-hoc patterns that were drifting apart.</text>
+        <text y="56" font-family="-apple-system" font-size="14" fill="#a8a8a8">Heads up: the dropdown wants plain DtButtons, not DtListItems. Josh figured this out the hard way.</text>
+        <text y="92" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#525252" letter-spacing="1">v2026.5.7 · 7 May</text>
+      </g>
+
+      <line x1="0" y1="468" x2="1320" y2="468" stroke="#1f1f1f"/>
+
+      <g transform="translate(0, 496)">
+        <text font-family="-apple-system" font-size="20" fill="#e6edf3" font-weight="700">DtChip · hide-close mode</text>
+        <text y="28" font-family="-apple-system" font-size="14" fill="#a8a8a8">For chips that aren't dismissible, like a default recipient on an export form. Set `:hide-close="true"`. Tiny prop, big difference in feeling when you can't remove the thing that has to stay.</text>
+        <text y="56" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#525252" letter-spacing="1">v2026.4.39 · 2 May</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="80" y="980" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#525252">written by claude haiku · sent by github actions · read by 25 designers</text>
+  <text x="1520" y="980" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#444" text-anchor="end">house of ayre</text>
+</svg>

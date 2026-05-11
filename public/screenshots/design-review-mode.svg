@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="drmbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#140a10"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#drmbg)"/>
+
+  <text x="80" y="120" font-family="Iowan Old Style, Georgia, serif" font-size="48" fill="#e6edf3" font-weight="500">point at the prototype, post to the PR</text>
+  <text x="80" y="156" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#7d8590" letter-spacing="3">HOUSE OF AYRE / 07 · DESIGN REVIEW MODE · LIVE BROWSER PROTOTYPES</text>
+
+  <g transform="translate(80, 220)">
+    <rect width="820" height="680" rx="14" fill="#141414" stroke="#262626"/>
+
+    <g transform="translate(0, 0)">
+      <rect width="820" height="48" rx="14" fill="#0d0d0d"/>
+      <rect y="34" width="820" height="14" fill="#0d0d0d"/>
+      <circle cx="24" cy="24" r="6" fill="#ff5f56"/>
+      <circle cx="44" cy="24" r="6" fill="#ffbd2e"/>
+      <circle cx="64" cy="24" r="6" fill="#27c93f"/>
+      <text x="410" y="29" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590" text-anchor="middle">design-studio/pr-preview/pr-221/#/CreditsAndUsage?reviewSession=pr-221-1707...</text>
+    </g>
+
+    <g transform="translate(40, 84)">
+      <text font-family="Iowan Old Style, Georgia, serif" font-size="26" fill="#e6edf3" font-weight="500">Credits and Usage</text>
+      <text y="28" font-family="-apple-system" font-size="13" fill="#7d8590">Your wallet activity for this office</text>
+
+      <g transform="translate(0, 60)">
+        <rect width="350" height="92" rx="10" fill="#0d0d0d" stroke="#2a2a2a"/>
+        <text x="20" y="30" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#7d8590" letter-spacing="2">PLAN CREDITS</text>
+        <text x="20" y="62" font-family="-apple-system" font-size="22" fill="#e6edf3" font-weight="600">2,847 <tspan font-size="14" fill="#7d8590" font-weight="400">/ 5,000</tspan></text>
+        <text x="20" y="82" font-family="-apple-system" font-size="12" fill="#a8a8a8">Resets May 31</text>
+      </g>
+
+      <g transform="translate(370, 60)">
+        <rect width="350" height="92" rx="10" fill="#0d0d0d" stroke="#2a2a2a"/>
+        <text x="20" y="30" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#7d8590" letter-spacing="2">DIALPAD CREDITS</text>
+        <text x="20" y="62" font-family="-apple-system" font-size="22" fill="#e6edf3" font-weight="600">$284.13</text>
+        <text x="20" y="82" font-family="-apple-system" font-size="12" fill="#a8a8a8">Auto-recharge on</text>
+      </g>
+
+      <g transform="translate(0, 180)">
+        <text font-family="-apple-system" font-size="14" fill="#e6edf3" font-weight="600">Recent transactions</text>
+        <g transform="translate(0, 24)">
+          <rect width="720" height="44" rx="8" fill="#0d0d0d" stroke="#1f1f1f"/>
+          <text x="20" y="28" font-family="-apple-system" font-size="13" fill="#a8a8a8">Outbound SMS · +1 415 ...</text>
+          <text x="420" y="28" font-family="ui-monospace" font-size="12" fill="#7d8590">$0.0075</text>
+          <text x="620" y="28" font-family="ui-monospace" font-size="11" fill="#525252">2 min ago</text>
+        </g>
+        <g transform="translate(0, 76)">
+          <rect width="720" height="44" rx="8" fill="#0d0d0d" stroke="#1f1f1f"/>
+          <text x="20" y="28" font-family="-apple-system" font-size="13" fill="#a8a8a8">AI Agent call · 4m 22s</text>
+          <text x="420" y="28" font-family="ui-monospace" font-size="12" fill="#7d8590">$0.86</text>
+          <text x="620" y="28" font-family="ui-monospace" font-size="11" fill="#525252">14 min ago</text>
+        </g>
+        <g transform="translate(0, 128)">
+          <rect width="720" height="44" rx="8" fill="#0d0d0d" stroke="#1f1f1f"/>
+          <text x="20" y="28" font-family="-apple-system" font-size="13" fill="#a8a8a8">Inbound call · +1 415 ...</text>
+          <text x="420" y="28" font-family="ui-monospace" font-size="12" fill="#7d8590">$0.014</text>
+          <text x="620" y="28" font-family="ui-monospace" font-size="11" fill="#525252">31 min ago</text>
+        </g>
+      </g>
+
+      <g transform="translate(330, 88)">
+        <circle r="14" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+        <text y="5" font-family="-apple-system" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+      </g>
+
+      <g transform="translate(700, 88)">
+        <circle r="14" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+        <text y="5" font-family="-apple-system" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+      </g>
+
+      <g transform="translate(395, 232)">
+        <circle r="14" fill="#22c55e" stroke="#fff" stroke-width="2"/>
+        <text y="5" font-family="-apple-system" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+      </g>
+
+      <g transform="translate(380, 268)">
+        <path d="M 0 0 L 24 0 L 12 -12 Z" fill="#0f0f0f" stroke="#3a3a3a"/>
+        <rect y="0" width="320" height="100" rx="10" fill="#0f0f0f" stroke="#3a3a3a" stroke-width="1.5"/>
+        <text x="16" y="24" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#ef4444" letter-spacing="2">COMMENT 3 · JOSH</text>
+        <text x="16" y="48" font-family="-apple-system" font-size="13" fill="#e6edf3">Can rate column show a tiny</text>
+        <text x="16" y="66" font-family="-apple-system" font-size="13" fill="#e6edf3">comparison vs the prior month?</text>
+        <text x="16" y="84" font-family="-apple-system" font-size="13" fill="#e6edf3">Same place — just a delta tick.</text>
+      </g>
+    </g>
+
+    <g transform="translate(40, 600)">
+      <rect width="740" height="52" rx="26" fill="#0d0d0d" stroke="#3a3a3a" stroke-width="1.5"/>
+      <circle cx="32" cy="26" r="10" fill="#ef4444"/>
+      <text x="56" y="32" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#e6edf3" letter-spacing="2">REVIEW MODE · 3 COMMENTS · 1 RESOLVED</text>
+      <g transform="translate(530, 14)">
+        <rect width="180" height="24" rx="12" fill="#1f6feb"/>
+        <text x="90" y="16" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#fff" letter-spacing="1.5" text-anchor="middle">UPDATE PR</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(940, 220)">
+    <rect width="580" height="680" rx="14" fill="#0d0d0d" stroke="#262626"/>
+
+    <g transform="translate(28, 32)">
+      <circle cx="14" cy="14" r="14" fill="#1f6feb"/>
+      <text x="14" y="19" font-family="-apple-system" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">J</text>
+      <text x="40" y="14" font-family="-apple-system" font-size="14" fill="#e6edf3" font-weight="600">Josh</text>
+      <text x="40" y="30" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590">commented on PR #221 · just now</text>
+    </g>
+
+    <rect x="28" y="72" width="524" height="1" fill="#1f1f1f"/>
+
+    <g transform="translate(28, 100)">
+      <text font-family="-apple-system" font-size="20" fill="#e6edf3" font-weight="700">🎨 Design Review by Josh</text>
+
+      <text y="40" font-family="-apple-system" font-size="13" fill="#a8a8a8">3 comments on CreditsAndUsage. 1 already resolved.</text>
+
+      <g transform="translate(0, 76)">
+        <rect width="524" height="86" rx="8" fill="#161616" stroke="#262626"/>
+        <text x="16" y="26" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#ef4444" letter-spacing="2">1 · PLAN CREDITS CARD</text>
+        <text x="16" y="50" font-family="-apple-system" font-size="13" fill="#e6edf3">"2,847" should round? Or is precision</text>
+        <text x="16" y="68" font-family="-apple-system" font-size="13" fill="#e6edf3">deliberate here?</text>
+      </g>
+
+      <g transform="translate(0, 174)">
+        <rect width="524" height="86" rx="8" fill="#161616" stroke="#262626"/>
+        <text x="16" y="26" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#ef4444" letter-spacing="2">2 · DIALPAD CREDITS CARD</text>
+        <text x="16" y="50" font-family="-apple-system" font-size="13" fill="#e6edf3">"Auto-recharge on" — can we link this</text>
+        <text x="16" y="68" font-family="-apple-system" font-size="13" fill="#e6edf3">to the settings page?</text>
+      </g>
+
+      <g transform="translate(0, 272)">
+        <rect width="524" height="86" rx="8" fill="#0a1a0a" stroke="#22c55e" stroke-width="1"/>
+        <text x="16" y="26" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#22c55e" letter-spacing="2">3 · RATE COLUMN · RESOLVED</text>
+        <text x="16" y="50" font-family="-apple-system" font-size="13" fill="#a8a8a8">"Can rate column show a tiny</text>
+        <text x="16" y="68" font-family="-apple-system" font-size="13" fill="#a8a8a8">comparison vs the prior month?"</text>
+      </g>
+
+      <g transform="translate(0, 386)">
+        <rect width="524" height="148" rx="8" fill="#010409" stroke="#30363d"/>
+        <text x="16" y="26" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#7d8590" letter-spacing="2">HIDDEN MACHINE-READABLE PAYLOAD</text>
+
+        <text font-family="ui-monospace, Menlo, monospace" font-size="11" x="16" y="56">
+          <tspan fill="#8b949e">&lt;!--</tspan>
+        </text>
+        <text font-family="ui-monospace, Menlo, monospace" font-size="11" x="16" y="74" fill="#f0b429">REVIEW_DATA={</text>
+        <text font-family="ui-monospace, Menlo, monospace" font-size="11" x="32" y="92" fill="#a8a8a8">"reviewSession":"pr-221-1707123456",</text>
+        <text font-family="ui-monospace, Menlo, monospace" font-size="11" x="32" y="108" fill="#a8a8a8">"author":"Josh","comments":[ ... ]</text>
+        <text font-family="ui-monospace, Menlo, monospace" font-size="11" x="16" y="126" fill="#f0b429">}</text>
+        <text font-family="ui-monospace, Menlo, monospace" font-size="11" x="16" y="126" dx="14" fill="#8b949e">--&gt;</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="80" y="980" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#525252">no backend · no chrome extension · no figma · github PAT in localstorage</text>
+  <text x="1520" y="980" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#444" text-anchor="end">house of ayre</text>
+</svg>

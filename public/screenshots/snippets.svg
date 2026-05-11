@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="snbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0a14"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#snbg)"/>
+
+  <text x="80" y="120" font-family="Iowan Old Style, Georgia, serif" font-size="48" fill="#e6edf3" font-weight="500">what the team is thinking</text>
+  <text x="80" y="156" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#7d8590" letter-spacing="3">HOUSE OF AYRE / 02 · WEEK OF MAY 4</text>
+
+  <g transform="translate(80, 220)">
+    <g>
+      <rect width="440" height="280" rx="12" fill="#141414" stroke="#262626"/>
+      <circle cx="32" cy="40" r="16" fill="#c4b5fd"/>
+      <text x="60" y="40" font-family="-apple-system" font-size="15" fill="#e6edf3" font-weight="600">Amit Ayre</text>
+      <text x="60" y="58" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590">Design Systems · Bangalore</text>
+      <line x1="20" y1="84" x2="420" y2="84" stroke="#262626"/>
+      <text x="20" y="112" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Shipped credits and usage prototype</text>
+      <text x="20" y="134" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Started license page revamp</text>
+      <text x="20" y="156" font-family="-apple-system" font-size="13" fill="#a8a8a8">› What's New drawer round 2 sent</text>
+      <text x="20" y="200" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">"Tier-first model finally clicked when</text>
+      <text x="20" y="218" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">I stopped fighting the existing config</text>
+      <text x="20" y="236" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">and layered Randstad scale on top..."</text>
+      <text x="20" y="262" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#525252" letter-spacing="2">3 WINS · 1 BLOCK</text>
+    </g>
+
+    <g transform="translate(456, 0)">
+      <rect width="440" height="280" rx="12" fill="#141414" stroke="#262626"/>
+      <circle cx="32" cy="40" r="16" fill="#4ade80"/>
+      <text x="60" y="40" font-family="-apple-system" font-size="15" fill="#e6edf3" font-weight="600">Abby Chen</text>
+      <text x="60" y="58" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590">Product Design · San Francisco</text>
+      <line x1="20" y1="84" x2="420" y2="84" stroke="#262626"/>
+      <text x="20" y="112" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Wallet hierarchy review with PM</text>
+      <text x="20" y="134" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Rate column replaced savings</text>
+      <text x="20" y="156" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Auto-recharge flow signed off</text>
+      <text x="20" y="200" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">"Realized we were burying the alert</text>
+      <text x="20" y="218" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">banner under a tab. Moved it to the</text>
+      <text x="20" y="236" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">main scroll. Suddenly it makes sense."</text>
+      <text x="20" y="262" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#525252" letter-spacing="2">3 WINS · 0 BLOCKS</text>
+    </g>
+
+    <g transform="translate(912, 0)">
+      <rect width="440" height="280" rx="12" fill="#141414" stroke="#262626"/>
+      <circle cx="32" cy="40" r="16" fill="#fbbf24"/>
+      <text x="60" y="40" font-family="-apple-system" font-size="15" fill="#e6edf3" font-weight="600">Ceci Rivera</text>
+      <text x="60" y="58" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590">UX Research · Mexico City</text>
+      <line x1="20" y1="84" x2="420" y2="84" stroke="#262626"/>
+      <text x="20" y="112" font-family="-apple-system" font-size="13" fill="#a8a8a8">› 6 office admin interviews wrapped</text>
+      <text x="20" y="134" font-family="-apple-system" font-size="13" fill="#a8a8a8">› SMS/MMS consolidation validated</text>
+      <text x="20" y="156" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Synthesis doc → leadership review</text>
+      <text x="20" y="200" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">"Every admin we talked to does the</text>
+      <text x="20" y="218" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">same CSV export workaround. We can</text>
+      <text x="20" y="236" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">kill that whole pattern with one feature."</text>
+      <text x="20" y="262" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#525252" letter-spacing="2">3 WINS · 0 BLOCKS</text>
+    </g>
+  </g>
+
+  <g transform="translate(80, 520)">
+    <g>
+      <rect width="440" height="280" rx="12" fill="#141414" stroke="#262626"/>
+      <circle cx="32" cy="40" r="16" fill="#60a5fa"/>
+      <text x="60" y="40" font-family="-apple-system" font-size="15" fill="#e6edf3" font-weight="600">Josh Hynes</text>
+      <text x="60" y="58" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590">Beacon Engineering · Austin</text>
+      <line x1="20" y1="84" x2="420" y2="84" stroke="#262626"/>
+      <text x="20" y="112" font-family="-apple-system" font-size="13" fill="#a8a8a8">› What's New drawer code review</text>
+      <text x="20" y="134" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Dialtone v4 release pipeline cleanup</text>
+      <text x="20" y="156" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Pair session with Amit Wednesday</text>
+      <text x="20" y="200" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">"The auto-sync workflow is clever but</text>
+      <text x="20" y="218" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">the drawer needs to handle empty state</text>
+      <text x="20" y="236" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">and long notes better. Sent fixes."</text>
+      <text x="20" y="262" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#525252" letter-spacing="2">3 WINS · 0 BLOCKS</text>
+    </g>
+
+    <g transform="translate(456, 0)">
+      <rect width="440" height="280" rx="12" fill="#141414" stroke="#262626"/>
+      <circle cx="32" cy="40" r="16" fill="#f472b6"/>
+      <text x="60" y="40" font-family="-apple-system" font-size="15" fill="#e6edf3" font-weight="600">Pranjal Natu</text>
+      <text x="60" y="58" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590">PRD Engineering · Bangalore</text>
+      <line x1="20" y1="84" x2="420" y2="84" stroke="#262626"/>
+      <text x="20" y="112" font-family="-apple-system" font-size="13" fill="#a8a8a8">› GCP reseller migration spec done</text>
+      <text x="20" y="134" font-family="-apple-system" font-size="13" fill="#a8a8a8">› License tier model PR landed</text>
+      <text x="20" y="156" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Audit ticket DP-185139 reviewed</text>
+      <text x="20" y="200" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">"Bundles V1 and V2 are running in</text>
+      <text x="20" y="218" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">parallel for two more sprints. UI needs</text>
+      <text x="20" y="236" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">to handle both without flickering."</text>
+      <text x="20" y="262" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#525252" letter-spacing="2">3 WINS · 1 BLOCK</text>
+    </g>
+
+    <g transform="translate(912, 0)">
+      <rect width="440" height="280" rx="12" fill="#141414" stroke="#262626"/>
+      <circle cx="32" cy="40" r="16" fill="#facc15"/>
+      <text x="60" y="40" font-family="-apple-system" font-size="15" fill="#e6edf3" font-weight="600">Ulises Martins</text>
+      <text x="60" y="58" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7d8590">Product Mgmt · Buenos Aires</text>
+      <line x1="20" y1="84" x2="420" y2="84" stroke="#262626"/>
+      <text x="20" y="112" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Licenses PRD review with Amit</text>
+      <text x="20" y="134" font-family="-apple-system" font-size="13" fill="#a8a8a8">› SMB → enterprise positioning doc</text>
+      <text x="20" y="156" font-family="-apple-system" font-size="13" fill="#a8a8a8">› Roadmap kickoff for H2</text>
+      <text x="20" y="200" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">"Office admins want fewer surfaces,</text>
+      <text x="20" y="218" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">not more. Every page we add is one</text>
+      <text x="20" y="236" font-family="Georgia, serif" font-style="italic" font-size="12" fill="#7d8590">more place they have to learn."</text>
+      <text x="20" y="262" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#525252" letter-spacing="2">3 WINS · 0 BLOCKS</text>
+    </g>
+  </g>
+
+  <text x="1520" y="980" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#444" text-anchor="end">house of ayre</text>
+</svg>
