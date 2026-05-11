@@ -1,6 +1,6 @@
 # House of Ayre
 
-Personal site for things I made outside the day job. Local-only, fully static.
+Personal site for things I made for Dialpad outside the day job. Local-only, fully static.
 
 `House of Ayre` (rhymes with *air*) is a portfolio quietly disguised as a brag-doc. Each project is one markdown file with a screenshot; the homepage filters them by status (Live · Building · Paused · Archived · Idea).
 
