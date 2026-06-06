@@ -5,6 +5,7 @@ oneLiner: Figma-style design reviews for live browser prototypes. Point, click, 
 status: paused
 shippedAt: 2026-02-08
 tags: [vue, dialtone, github-api, design-review, prototypes]
+previewLabel: GitHub PR
 links:
   - { label: "design-studio PR #221", url: "https://github.com/dialpad/design-studio/pull/221" }
 ---

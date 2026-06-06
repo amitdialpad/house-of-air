@@ -5,6 +5,7 @@ oneLiner: A Python research pipeline. Amplitude in, designer-readable prose out,
 status: live
 shippedAt: 2026-02-23
 tags: [python, pipeline, amplitude, mcp, claude-haiku, design-research]
+previewLabel: Local pipeline
 links:
   - { label: "/snoopy skill", url: "#" }
 ---

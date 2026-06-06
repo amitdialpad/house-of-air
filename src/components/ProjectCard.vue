@@ -2,16 +2,21 @@
   <router-link
     :to="`/p/${project.slug}`"
     class="project-row"
-    :class="[project.status, { 'no-screenshot': !project.screenshot }]"
+    :class="project.status"
   >
     <span class="number" aria-hidden="true">{{ paddedIndex }}</span>
 
-    <div v-if="project.screenshot" class="screenshot">
+    <div class="screenshot">
       <img
+        v-if="project.screenshot"
         :src="project.screenshot"
         :alt="`Screenshot of ${project.title}`"
         loading="lazy"
       />
+      <div v-else class="preview-placeholder" :aria-label="`No preview available for ${project.title}`">
+        <span class="preview-label">{{ project.previewLabel || 'Workflow' }}</span>
+        <span class="preview-title">No preview</span>
+      </div>
     </div>
 
     <div class="summary">
@@ -71,14 +76,6 @@ function formatDate(iso) {
 .project-row.archived { --status-color: var(--status-archived); }
 .project-row.idea { --status-color: var(--status-idea); }
 
-.project-row.no-screenshot {
-  grid-template-columns: 56px minmax(0, 1fr);
-}
-
-.project-row.no-screenshot .summary {
-  max-width: 820px;
-}
-
 .project-row:hover {
   background: var(--surface);
 }
@@ -121,6 +118,36 @@ function formatDate(iso) {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.preview-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  background:
+    linear-gradient(135deg, oklch(77% 0.17 145 / 0.1), transparent 58%),
+    repeating-linear-gradient(120deg, transparent 0 18px, oklch(92% 0.02 142 / 0.045) 19px, transparent 20px 42px),
+    var(--surface-raised);
+}
+
+.preview-label,
+.preview-title {
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.preview-label {
+  color: var(--text-soft);
+  font-size: 0.68rem;
+}
+
+.preview-title {
+  color: var(--text);
+  font-size: 0.9rem;
 }
 
 .summary {
@@ -187,10 +214,6 @@ function formatDate(iso) {
     align-items: start;
   }
 
-  .project-row.no-screenshot {
-    grid-template-columns: 44px minmax(0, 1fr);
-  }
-
   .screenshot {
     grid-column: 2;
     max-width: 420px;
@@ -210,10 +233,6 @@ function formatDate(iso) {
     width: min(100%, 22rem);
     max-width: 22rem;
     overflow-x: clip;
-  }
-
-  .project-row.no-screenshot {
-    grid-template-columns: 1fr;
   }
 
   .number,
