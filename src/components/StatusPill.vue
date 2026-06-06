@@ -1,6 +1,6 @@
 <template>
   <span class="pill" :class="status">
-    <span class="dot">{{ meta?.icon }}</span>
+    <span class="dot" aria-hidden="true"></span>
     <span class="label">{{ meta?.label }}</span>
   </span>
 </template>
@@ -15,25 +15,27 @@ const meta = computed(() => STATUSES[props.status])
 
 <style scoped>
 .pill {
+  --pill-color: var(--status-live);
   display: inline-flex;
   align-items: center;
   gap: 7px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
 
 .dot {
-  font-size: 15px;
-  line-height: 1;
-  transform: translateY(-1px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pill-color);
 }
 
-.pill.live .dot     { color: #4ade80; }
-.pill.building .dot { color: #fbbf24; }
-.pill.paused .dot   { color: #94a3b8; }
-.pill.archived .dot { color: #737373; }
-.pill.idea .dot     { color: #c4b5fd; }
+.pill.live     { --pill-color: var(--status-live); }
+.pill.building { --pill-color: var(--status-building); }
+.pill.paused   { --pill-color: var(--status-paused); }
+.pill.archived { --pill-color: var(--status-archived); }
+.pill.idea     { --pill-color: var(--status-idea); }
 </style>

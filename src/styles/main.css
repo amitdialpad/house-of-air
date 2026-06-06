@@ -1,18 +1,45 @@
 :root {
-  --bg: #0e0c0a;
-  --bg-card: #181513;
-  --bg-card-hover: #1e1a17;
-  --border: #2a2622;
-  --border-strong: #3a342e;
-  --text: #ebe7e3;
-  --text-muted: #9a948e;
+  color-scheme: dark;
 
-  --accent: #4ade80;
-  --accent-hover: #5eea91;
-  --accent-dim: rgba(74, 222, 128, 0.16);
+  --bg: oklch(18% 0.035 164);
+  --bg-deep: oklch(13% 0.03 164);
+  --surface: oklch(23% 0.034 164);
+  --surface-raised: oklch(27% 0.036 164);
+  --surface-hover: oklch(30% 0.04 164);
+  --line: oklch(37% 0.035 164);
+  --line-strong: oklch(51% 0.045 164);
+  --text: oklch(92% 0.02 142);
+  --text-muted: oklch(74% 0.028 150);
+  --text-soft: oklch(61% 0.028 150);
 
+  --accent: oklch(77% 0.17 145);
+  --accent-hover: oklch(83% 0.18 145);
+  --accent-ink: oklch(16% 0.04 155);
+  --signal: oklch(76% 0.14 202);
+  --ochre: oklch(77% 0.16 83);
+  --clay: oklch(70% 0.15 28);
+  --plum: oklch(72% 0.13 318);
+  --backdrop: oklch(10% 0.028 164 / 0.86);
+  --focus: oklch(84% 0.19 145 / 0.92);
+
+  --status-live: var(--accent);
+  --status-building: var(--ochre);
+  --status-paused: var(--signal);
+  --status-archived: oklch(65% 0.035 164);
+  --status-idea: var(--plum);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+
+  --font-display: "Avenir Next Condensed", "DIN Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
   --font-serif: "Iowan Old Style", "Palatino Linotype", "Palatino", "Baskerville", Georgia, serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Avenir Next", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
@@ -21,7 +48,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  background: var(--bg-deep);
   color: var(--text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -31,7 +58,8 @@ html, body {
 
 body {
   min-height: 100vh;
-  background-image: radial-gradient(ellipse at top, rgba(255, 235, 200, 0.022), transparent 60%);
+  background:
+    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 42%, var(--bg-deep) 100%);
 }
 
 a { color: inherit; }
@@ -50,15 +78,15 @@ a { color: inherit; }
   position: absolute;
   left: -9999px;
   top: 0;
-  z-index: 9999;
-  padding: 10px 16px;
+  z-index: 60;
+  padding: var(--space-3) var(--space-4);
   background: var(--accent);
-  color: var(--bg);
+  color: var(--accent-ink);
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  border-radius: 0 0 8px 0;
+  border-radius: 0 0 6px 0;
   text-decoration: none;
   font-weight: 600;
 }
@@ -72,7 +100,7 @@ a { color: inherit; }
 :focus { outline: none; }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
   border-radius: 4px;
 }

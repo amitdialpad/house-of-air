@@ -1,9 +1,10 @@
 <template>
-  <div class="legend">
+  <nav class="legend" aria-label="Filter projects by status">
     <button
       type="button"
       class="item all"
       :class="{ active: active === 'all' }"
+      :aria-pressed="active === 'all'"
       @click="$emit('filter', 'all')"
     >
       <span class="label">All</span>
@@ -19,14 +20,15 @@
         active: active === key,
         empty: !counts[key]
       }"
+      :aria-pressed="active === key"
       :disabled="!counts[key]"
       @click="counts[key] && $emit('filter', active === key ? 'all' : key)"
     >
-      <span class="dot" :style="{ color: s.color }">{{ s.icon }}</span>
+      <span class="dot" :style="{ backgroundColor: s.color }" aria-hidden="true"></span>
       <span class="label">{{ s.label }}</span>
       <span class="count">{{ counts[key] || 0 }}</span>
     </button>
-  </div>
+  </nav>
 </template>
 
 <script setup>
@@ -45,26 +47,30 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
 
 <style scoped>
 .legend {
+  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-bottom: 0;
 }
 
 .item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  min-height: 44px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
-  background: transparent;
-  border: 1px solid transparent;
-  padding: 6px 14px;
-  border-radius: 999px;
+  background: var(--bg);
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 0;
   cursor: pointer;
   transition: color 160ms ease, background 160ms ease, border-color 160ms ease, opacity 160ms ease;
   font-weight: 500;
@@ -72,24 +78,28 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
 
 .item:hover:not(:disabled):not(.active) {
   color: var(--text);
-  border-color: var(--border);
+  background: var(--surface);
 }
 
 .item.active {
-  color: var(--text);
-  background: var(--bg-card);
-  border-color: var(--accent);
+  color: var(--accent-ink);
+  background: var(--accent);
 }
 
 .item:disabled {
-  opacity: 0.4;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
 .dot {
-  font-size: 14px;
-  line-height: 1;
-  transform: translateY(-1px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--bg);
+}
+
+.item.active .dot {
+  background: var(--accent-ink) !important;
 }
 
 .count {
@@ -98,11 +108,22 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
 }
 
 .item.active .count {
-  color: var(--text);
+  color: var(--accent-ink);
   font-weight: 600;
 }
 
 .item.all .label {
   font-weight: 600;
+}
+
+@media (max-width: 620px) {
+  .legend {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .item {
+    justify-content: space-between;
+  }
 }
 </style>

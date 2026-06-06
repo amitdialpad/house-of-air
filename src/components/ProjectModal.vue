@@ -3,7 +3,7 @@
     <Transition name="modal">
       <div v-if="project" class="overlay" @click.self="$emit('close')">
         <div class="panel" role="dialog" aria-modal="true" :aria-label="project.title">
-          <button class="close" type="button" @click="$emit('close')" aria-label="Close">×</button>
+          <button class="close" type="button" @click="$emit('close')" aria-label="Close project">×</button>
 
           <a
             v-if="project.screenshot && primaryLink"
@@ -12,11 +12,11 @@
             rel="noopener"
             class="screenshot screenshot-link"
           >
-            <img :src="project.screenshot" :alt="project.title" />
-            <div class="screenshot-cta" aria-hidden="true">Open ↗</div>
+            <img :src="project.screenshot" :alt="`Screenshot of ${project.title}`" />
+            <div class="screenshot-cta" aria-hidden="true">Open link</div>
           </a>
           <div v-else-if="project.screenshot" class="screenshot">
-            <img :src="project.screenshot" :alt="project.title" />
+            <img :src="project.screenshot" :alt="`Screenshot of ${project.title}`" />
           </div>
 
           <div class="hero-meta">
@@ -34,7 +34,7 @@
             rel="noopener"
             class="primary-cta"
           >
-            {{ primaryLink.label }} <span class="arrow" aria-hidden="true">↗</span>
+            {{ primaryLink.label }} <span class="arrow" aria-hidden="true">→</span>
           </a>
 
           <article class="body" v-html="project.bodyHtml"></article>
@@ -44,7 +44,7 @@
               <h3>{{ primaryLink ? 'More links' : 'Links' }}</h3>
               <ul>
                 <li v-for="l in otherLinks" :key="l.label">
-                  <a :href="l.url" target="_blank" rel="noopener">{{ l.label }} ↗</a>
+                  <a :href="l.url" target="_blank" rel="noopener">{{ l.label }}</a>
                 </li>
               </ul>
             </section>
@@ -124,40 +124,37 @@ const dateFraming = computed(() => {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--backdrop);
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  z-index: 1000;
+  z-index: 40;
   overflow-y: auto;
-  padding: 48px 24px;
+  padding: clamp(18px, 4vw, 52px) 20px;
 }
 
 .panel {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  max-width: 780px;
+  background: var(--surface-raised);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  max-width: 920px;
   width: 100%;
-  padding: 44px 48px 56px;
+  padding: clamp(28px, 5vw, 54px);
   position: relative;
   margin: auto;
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.6);
 }
 
 .close {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
   background: transparent;
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   color: var(--text-muted);
-  font-size: 22px;
+  font-size: 1.35rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -169,7 +166,7 @@ const dateFraming = computed(() => {
 
 .close:hover {
   background: var(--bg);
-  border-color: var(--border-strong);
+  border-color: var(--accent);
   color: var(--text);
 }
 
@@ -177,11 +174,12 @@ const dateFraming = computed(() => {
 .screenshot-link {
   display: block;
   aspect-ratio: 16 / 10;
-  border-radius: 10px;
+  border-radius: 6px;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   margin-bottom: 32px;
   position: relative;
+  background: var(--bg);
 }
 
 .screenshot img,
@@ -190,7 +188,7 @@ const dateFraming = computed(() => {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .screenshot-link {
@@ -199,27 +197,24 @@ const dateFraming = computed(() => {
 }
 
 .screenshot-link:hover img {
-  transform: scale(1.025);
+  transform: scale(1.018);
 }
 
 .screenshot-cta {
   position: absolute;
-  bottom: 14px;
-  right: 14px;
-  background: rgba(0, 0, 0, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: var(--accent);
-  padding: 8px 14px;
-  border-radius: 999px;
+  bottom: 12px;
+  right: 12px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 8px 12px;
+  border-radius: 4px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 200ms ease, transform 200ms ease;
-  border: 1px solid var(--accent);
 }
 
 .screenshot-link:hover .screenshot-cta,
@@ -230,36 +225,39 @@ const dateFraming = computed(() => {
 
 .hero-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   margin-bottom: 14px;
 }
 
 .date {
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text);
+  font-size: 0.76rem;
+  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   font-weight: 500;
 }
 
 h1 {
-  font-family: var(--font-serif);
-  font-size: 40px;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
   letter-spacing: -0.025em;
-  line-height: 1.08;
+  line-height: 0.9;
   margin: 0 0 16px;
   color: var(--text);
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
 .one-liner {
-  font-size: 19px;
+  max-width: 66ch;
+  font-size: clamp(1.08rem, 2vw, 1.3rem);
   color: var(--text-muted);
   margin: 0 0 28px;
-  line-height: 1.55;
-  font-family: var(--font-serif);
+  line-height: 1.6;
 }
 
 .primary-cta {
@@ -267,22 +265,21 @@ h1 {
   align-items: center;
   gap: 10px;
   background: var(--accent);
-  color: #0a0a0a;
-  padding: 11px 22px;
-  border-radius: 999px;
-  font-size: 13.5px;
-  font-weight: 600;
+  color: var(--accent-ink);
+  padding: 12px 18px;
+  border-radius: 5px;
+  font-size: 0.92rem;
+  font-weight: 700;
   text-decoration: none;
   margin: 0 0 40px;
   border: 1px solid var(--accent);
-  transition: transform 160ms ease, background 160ms ease;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
   font-family: var(--font-sans);
-  letter-spacing: 0.01em;
 }
 
 .primary-cta .arrow {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 1rem;
   transition: transform 160ms ease;
 }
 
@@ -292,23 +289,26 @@ h1 {
 }
 
 .primary-cta:hover .arrow {
-  transform: translate(2px, -2px);
+  transform: translateX(3px);
 }
 
 .body {
-  font-size: 16.5px;
+  max-width: 72ch;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--text);
 }
 
 .body :deep(h2) {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  margin: 36px 0 16px;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  margin: 42px 0 16px;
+  text-wrap: balance;
 }
 
 .body :deep(p) { margin: 0 0 20px; }
@@ -317,15 +317,15 @@ h1 {
   background: var(--bg);
   padding: 2px 7px;
   border-radius: 4px;
-  font-size: 14px;
-  border: 1px solid var(--border);
+  font-size: 0.88rem;
+  border: 1px solid var(--line);
   font-family: var(--font-mono);
 }
 
 .body :deep(a) {
   color: var(--text);
   text-decoration: underline;
-  text-decoration-color: var(--border-strong);
+  text-decoration-color: var(--line-strong);
   text-underline-offset: 3px;
 }
 
@@ -339,12 +339,16 @@ h1 {
   margin: 0 0 20px;
 }
 
+.body :deep(li) {
+  margin-bottom: 10px;
+}
+
 .body :deep(strong) { color: var(--text); }
 
 .meta-footer {
   margin-top: 48px;
   padding-top: 28px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 32px;
@@ -352,9 +356,9 @@ h1 {
 
 .meta-footer h3 {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
   margin: 0 0 14px;
   font-weight: 600;
@@ -364,30 +368,31 @@ h1 {
 .meta-footer li { margin-bottom: 8px; }
 .meta-footer a {
   color: var(--text);
-  text-decoration: none;
-  font-size: 14px;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+  font-size: 0.92rem;
 }
-.meta-footer a:hover { text-decoration: underline; }
+.meta-footer a:hover { text-decoration-color: var(--accent); }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 0.72rem;
   color: var(--text-muted);
   background: var(--bg);
-  padding: 3px 8px;
+  padding: 4px 7px;
   border-radius: 4px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
 }
 
-/* Animations */
 .modal-enter-active,
 .modal-leave-active {
-  transition: opacity 220ms ease;
+  transition: opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .modal-enter-active .panel,
 .modal-leave-active .panel {
-  transition: transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 220ms ease;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), opacity 220ms ease;
 }
 .modal-enter-from,
 .modal-leave-to {
@@ -396,18 +401,30 @@ h1 {
 .modal-enter-from .panel,
 .modal-leave-to .panel {
   opacity: 0;
-  transform: translateY(24px) scale(0.985);
+  transform: translateY(18px);
 }
 
 @media (max-width: 640px) {
-  .overlay { padding: 0; }
+  .overlay {
+    padding: 0;
+  }
+
   .panel {
-    padding: 32px 22px 48px;
+    padding: 72px 20px 44px;
     border-radius: 0;
     min-height: 100vh;
-    box-shadow: none;
+    border-left: 0;
+    border-right: 0;
   }
-  h1 { font-size: 30px; }
-  .primary-cta { width: 100%; justify-content: center; }
+
+  .screenshot,
+  .screenshot-link {
+    margin-bottom: 26px;
+  }
+
+  .primary-cta {
+    width: 100%;
+    justify-content: center;
+  }
 }
 </style>
