@@ -50,9 +50,8 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
   grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
-  gap: 0;
-  border: 1px solid var(--line);
-  border-bottom: 0;
+  gap: 6px 14px;
+  padding-top: 18px;
 }
 
 .item {
@@ -65,25 +64,24 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--text-muted);
-  background: var(--bg);
+  background: transparent;
   border: 0;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 10px 14px;
+  padding: 8px 0 8px 12px;
   border-radius: 0;
   cursor: pointer;
-  transition: color 160ms ease, background 160ms ease, border-color 160ms ease, opacity 160ms ease;
+  border-left: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease, opacity 160ms ease;
   font-weight: 500;
 }
 
 .item:hover:not(:disabled):not(.active) {
   color: var(--text);
-  background: var(--surface);
+  border-left-color: var(--line-strong);
 }
 
 .item.active {
-  color: var(--accent-ink);
-  background: var(--accent);
+  color: var(--text);
+  border-left-color: var(--accent);
 }
 
 .item:disabled {
@@ -99,7 +97,7 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
 }
 
 .item.active .dot {
-  background: var(--accent-ink) !important;
+  background: var(--accent) !important;
 }
 
 .count {
@@ -108,7 +106,7 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
 }
 
 .item.active .count {
-  color: var(--accent-ink);
+  color: var(--text);
   font-weight: 600;
 }
 
@@ -118,12 +116,15 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
 
 @media (max-width: 620px) {
   .legend {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    gap: 4px 14px;
+    max-width: 22rem;
   }
 
   .item {
-    justify-content: space-between;
+    justify-content: flex-start;
+    min-height: 34px;
+    padding: 6px 0 6px 10px;
   }
 }
 </style>

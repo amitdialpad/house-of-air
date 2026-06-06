@@ -20,21 +20,6 @@
         </p>
       </div>
 
-      <dl class="hero-stats" aria-label="Project summary">
-        <div>
-          <dt>Projects</dt>
-          <dd>{{ projectTotal }}</dd>
-        </div>
-        <div>
-          <dt>Live</dt>
-          <dd>{{ liveCount }}</dd>
-        </div>
-        <div>
-          <dt>Latest</dt>
-          <dd>{{ latestDate }}</dd>
-        </div>
-      </dl>
-
       <StatusLegend :counts="counts" :active="activeFilter" @filter="setFilter" />
     </header>
 
@@ -101,21 +86,6 @@ const filteredProjects = computed(() =>
     : projects.filter(p => p.status === activeFilter.value)
 )
 
-const projectTotal = computed(() => projects.length)
-const liveCount = computed(() => counts.value.live || 0)
-
-const latestProject = computed(() => {
-  return projects
-    .filter(p => p.shippedAt)
-    .sort((a, b) => b.shippedAt.localeCompare(a.shippedAt))[0]
-})
-
-const latestDate = computed(() => {
-  if (!latestProject.value?.shippedAt) return 'TBD'
-  return new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' })
-    .format(new Date(latestProject.value.shippedAt))
-})
-
 const boardLabel = computed(() => {
   if (activeFilter.value === 'all') return 'All projects'
   return `${STATUSES[activeFilter.value]?.label || activeFilter.value} projects`
@@ -136,11 +106,12 @@ function setFilter(status) {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1fr);
-  gap: clamp(28px, 5vw, 72px);
-  align-items: end;
-  padding-bottom: 28px;
-  margin-bottom: clamp(36px, 6vw, 72px);
+  grid-template-columns: minmax(280px, 0.72fr) minmax(320px, 1fr);
+  column-gap: clamp(28px, 5vw, 80px);
+  row-gap: clamp(24px, 3vw, 36px);
+  align-items: center;
+  padding-bottom: clamp(28px, 4vw, 44px);
+  margin-bottom: clamp(32px, 5vw, 56px);
   border-bottom: 1px solid var(--line);
   min-width: 0;
 }
@@ -159,7 +130,7 @@ function setFilter(status) {
   margin: 0;
   color: var(--text);
   font-family: var(--font-display);
-  font-size: clamp(4.25rem, 12vw, 6rem);
+  font-size: clamp(3.25rem, 7.4vw, 5rem);
   font-weight: 800;
   line-height: 0.82;
   letter-spacing: -0.025em;
@@ -198,15 +169,15 @@ function setFilter(status) {
 }
 
 .tagline {
-  max-width: 15ch;
-  margin: 0 0 18px;
+  max-width: 30ch;
+  margin: 0 0 16px;
   color: var(--text);
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.8vw, 4.2rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-transform: none;
   text-wrap: balance;
 }
 
@@ -227,40 +198,6 @@ function setFilter(status) {
 
 .byline a:hover {
   border-bottom-color: var(--accent);
-}
-
-.hero-stats {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 6px 0 0;
-  border: 1px solid var(--line);
-}
-
-.hero-stats div {
-  padding: 16px 18px;
-}
-
-.hero-stats div + div {
-  border-left: 1px solid var(--line);
-}
-
-.hero-stats dt {
-  color: var(--text-soft);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.hero-stats dd {
-  margin: 8px 0 0;
-  color: var(--text);
-  font-family: var(--font-display);
-  font-size: clamp(1.85rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 0.95;
-  text-transform: uppercase;
 }
 
 .project-board {
@@ -349,26 +286,18 @@ function setFilter(status) {
   }
 
   .hero h1 {
-    font-size: clamp(3.4rem, 18vw, 5rem);
+    font-size: clamp(3.3rem, 16vw, 4.6rem);
     gap: 0.08em;
   }
 
   .tagline {
-    font-size: clamp(2rem, 11vw, 3.2rem);
-    max-width: 8.6ch;
+    font-size: clamp(1.35rem, 7vw, 1.75rem);
+    max-width: 22ch;
   }
 
   .byline {
     max-width: min(34ch, calc(100vw - 36px));
   }
 
-  .hero-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-stats div + div {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
 }
 </style>
