@@ -24,8 +24,6 @@
         <span v-for="t in project.tags.slice(0, 4)" :key="t" class="tag">{{ t }}</span>
       </div>
     </div>
-
-    <span class="open" aria-hidden="true">View</span>
   </router-link>
 </template>
 
@@ -53,7 +51,7 @@ function formatDate(iso) {
 .project-row {
   --status-color: var(--status-live);
   display: grid;
-  grid-template-columns: 56px minmax(220px, 360px) minmax(0, 1fr) 64px;
+  grid-template-columns: 56px minmax(220px, 360px) minmax(0, 1fr);
   gap: clamp(18px, 3vw, 34px);
   align-items: center;
   padding: clamp(22px, 4vw, 36px) 0;
@@ -185,21 +183,6 @@ function formatDate(iso) {
   border: 1px solid var(--line);
 }
 
-.open {
-  justify-self: end;
-  color: var(--text-soft);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: color 180ms ease, transform 180ms ease;
-}
-
-.project-row:hover .open {
-  color: var(--status-color);
-  transform: translateX(4px);
-}
-
 @media (max-width: 880px) {
   .project-row {
     grid-template-columns: 44px minmax(0, 1fr);
@@ -215,10 +198,6 @@ function formatDate(iso) {
     grid-column: 2;
   }
 
-  .open {
-    grid-column: 2;
-    justify-self: start;
-  }
 }
 
 @media (max-width: 560px) {
@@ -233,8 +212,7 @@ function formatDate(iso) {
 
   .number,
   .screenshot,
-  .summary,
-  .open {
+  .summary {
     grid-column: 1;
     max-width: 100%;
   }

@@ -12,21 +12,17 @@
     </button>
 
     <button
-      v-for="(s, key) in STATUSES"
+      v-for="{ key, status } in visibleStatuses"
       :key="key"
       type="button"
       class="item"
-      :class="{
-        active: active === key,
-        empty: !counts[key]
-      }"
+      :class="{ active: active === key }"
       :aria-pressed="active === key"
-      :disabled="!counts[key]"
-      @click="counts[key] && $emit('filter', active === key ? 'all' : key)"
+      @click="$emit('filter', active === key ? 'all' : key)"
     >
-      <span class="dot" :style="{ backgroundColor: s.color }" aria-hidden="true"></span>
-      <span class="label">{{ s.label }}</span>
-      <span class="count">{{ counts[key] || 0 }}</span>
+      <span class="dot" :style="{ backgroundColor: status.color }" aria-hidden="true"></span>
+      <span class="label">{{ status.label }}</span>
+      <span class="count">{{ counts[key] }}</span>
     </button>
   </nav>
 </template>
@@ -43,6 +39,11 @@ const props = defineProps({
 defineEmits(['filter'])
 
 const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b, 0))
+const visibleStatuses = computed(() =>
+  Object.entries(STATUSES)
+    .filter(([key]) => props.counts[key] > 0)
+    .map(([key, status]) => ({ key, status }))
+)
 </script>
 
 <style scoped>
@@ -74,7 +75,7 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
   font-weight: 500;
 }
 
-.item:hover:not(:disabled):not(.active) {
+.item:hover:not(.active) {
   color: var(--text);
   border-left-color: var(--line-strong);
 }
@@ -82,11 +83,6 @@ const total = computed(() => Object.values(props.counts).reduce((a, b) => a + b,
 .item.active {
   color: var(--text);
   border-left-color: var(--accent);
-}
-
-.item:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 .dot {
