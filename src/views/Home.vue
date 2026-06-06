@@ -3,11 +3,12 @@
   <div class="home" :inert="!!modalProject">
     <header class="hero">
       <div class="hero-lockup">
-        <p class="site-note">Personal tools, shipped out of hours</p>
-        <h1>
-          <span>House</span>
-          <span class="of">of</span>
-          <span>Ayre</span>
+        <h1 aria-label="House of Ayre">
+          <span class="title-row">
+            <span class="word">House</span>
+            <span class="word of">of</span>
+          </span>
+          <span class="word ayre">Ayre</span>
         </h1>
       </div>
 
@@ -146,46 +147,49 @@ function setFilter(status) {
 
 .hero-lockup {
   display: grid;
-  gap: 18px;
-}
-
-.site-note {
-  width: fit-content;
-  margin: 0;
-  padding: 6px 10px;
-  border: 1px solid var(--line-strong);
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  gap: 20px;
 }
 
 .hero h1 {
-  display: grid;
-  gap: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.08em;
+  width: max-content;
+  max-width: 100%;
   margin: 0;
   color: var(--text);
   font-family: var(--font-display);
   font-size: clamp(4.25rem, 12vw, 6rem);
   font-weight: 800;
-  line-height: 0.78;
+  line-height: 0.82;
   letter-spacing: -0.025em;
   text-transform: uppercase;
-  text-wrap: balance;
+}
+
+.hero h1 .word {
+  display: block;
+}
+
+.hero h1 .title-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18em;
+  line-height: 0.82;
 }
 
 .hero h1 .of {
-  color: var(--signal);
-  font-family: var(--font-serif);
-  font-size: 0.34em;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1;
-  text-transform: lowercase;
-  transform: translateX(0.08em);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.hero h1 .ayre {
+  line-height: 0.82;
 }
 
 .hero-copy {
@@ -346,6 +350,7 @@ function setFilter(status) {
 
   .hero h1 {
     font-size: clamp(3.4rem, 18vw, 5rem);
+    gap: 0.08em;
   }
 
   .tagline {
