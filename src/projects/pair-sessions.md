@@ -5,7 +5,7 @@ oneLiner: Buddy-up workshops for designers learning to work with AI tools. Three
 status: live
 shippedAt: 2026-03-15
 tags: [education, ai-tools, claude-code, beacon, workshops]
-screenshot: /screenshots/pair-sessions.svg
+screenshot: /screenshots/pair-sessions.png
 links:
   - { label: "Session 1", url: "https://amitdialpad.github.io/design-pair-sessions/sessions/session-1.html" }
   - { label: "GitHub repo", url: "https://github.com/amitdialpad/design-pair-sessions" }

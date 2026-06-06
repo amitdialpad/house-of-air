@@ -1,10 +1,13 @@
 <template>
-  <router-link :to="`/p/${project.slug}`" class="project-row" :class="project.status">
+  <router-link
+    :to="`/p/${project.slug}`"
+    class="project-row"
+    :class="[project.status, { 'no-screenshot': !project.screenshot }]"
+  >
     <span class="number" aria-hidden="true">{{ paddedIndex }}</span>
 
-    <div class="screenshot" :class="{ empty: !project.screenshot }">
+    <div v-if="project.screenshot" class="screenshot">
       <img
-        v-if="project.screenshot"
         :src="project.screenshot"
         :alt="`Screenshot of ${project.title}`"
         loading="lazy"
@@ -68,6 +71,14 @@ function formatDate(iso) {
 .project-row.archived { --status-color: var(--status-archived); }
 .project-row.idea { --status-color: var(--status-idea); }
 
+.project-row.no-screenshot {
+  grid-template-columns: 56px minmax(0, 1fr);
+}
+
+.project-row.no-screenshot .summary {
+  max-width: 820px;
+}
+
 .project-row:hover {
   background: var(--surface);
 }
@@ -110,19 +121,6 @@ function formatDate(iso) {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.screenshot.empty {
-  display: grid;
-  place-items: center;
-}
-
-.screenshot.empty::after {
-  content: "No artifact yet";
-  color: var(--text-soft);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
 }
 
 .summary {
@@ -189,6 +187,10 @@ function formatDate(iso) {
     align-items: start;
   }
 
+  .project-row.no-screenshot {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+
   .screenshot {
     grid-column: 2;
     max-width: 420px;
@@ -208,6 +210,10 @@ function formatDate(iso) {
     width: min(100%, 22rem);
     max-width: 22rem;
     overflow-x: clip;
+  }
+
+  .project-row.no-screenshot {
+    grid-template-columns: 1fr;
   }
 
   .number,

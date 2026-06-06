@@ -5,7 +5,6 @@ oneLiner: Daily cron refreshes a hidden marker so deploys never hit the 14-day c
 status: live
 shippedAt: 2026-05-01
 tags: [cron, github-api, zsh, skills, automation]
-screenshot: /screenshots/pr-previews.svg
 links:
   - { label: "/extend skill", url: "#" }
 ---

@@ -5,7 +5,7 @@ oneLiner: Auto-syncing release notes for designers who never read the changelog.
 status: building
 shippedAt: 2026-05-08
 tags: [beacon, dialtone, design-system, vue]
-screenshot: /screenshots/beacon-whats-new.svg
+screenshot: /screenshots/beacon-whats-new.png
 links:
   - { label: "Beacon PR preview", url: "https://beacon.dialpad.design/deploy/pr-616/#/inbox" }
   - { label: "Jira: DDT-1799", url: "#" }

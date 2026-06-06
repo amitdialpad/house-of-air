@@ -5,7 +5,7 @@ oneLiner: A weekly newsletter on Beacon releases. Auto-written, auto-sent, 25 de
 status: live
 shippedAt: 2026-04-12
 tags: [github-actions, claude-haiku, gmail, design-team, weekly]
-screenshot: /screenshots/beacon-brief.svg
+screenshot: /screenshots/beacon-brief.png
 links:
   - { label: "Beacon Brief page", url: "https://amitdialpad.github.io/design-pair-sessions/#beacon-brief" }
   - { label: "GitHub repo", url: "https://github.com/amitdialpad/design-pair-sessions" }

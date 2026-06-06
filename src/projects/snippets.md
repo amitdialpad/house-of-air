@@ -5,7 +5,7 @@ oneLiner: Glean pulls the email, parser rebuilds the page, cron pushes to Pages.
 status: live
 shippedAt: 2026-04-15
 tags: [glean, github-pages, cron, design-team]
-screenshot: /screenshots/snippets.svg
+screenshot: /screenshots/snippets.png
 links:
   - { label: "Snippets page (private)", url: "https://super-goggles-wwyeoqk.pages.github.io/" }
 ---
