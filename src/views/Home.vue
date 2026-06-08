@@ -3,20 +3,20 @@
   <div class="home" :inert="!!modalProject">
     <header class="hero">
       <div class="hero-lockup">
-        <h1 aria-label="House of Ayre">
+        <h1 aria-label="House of Air">
           <span class="title-row">
             <span class="word">House</span>
             <span class="word of">of</span>
           </span>
-          <span class="word ayre">Ayre</span>
+          <span class="word air">Air</span>
         </h1>
       </div>
 
       <div class="hero-copy">
         <p class="tagline">Small systems that remove drag from design work.</p>
         <p class="byline">
-          By <a href="https://dialpadhq.com/user/amit.ayre" target="_blank" rel="noopener">Amit</a>,
-          Staff Designer in India. Ayre rhymes with air.
+          By <a href="https://dialpadhq.com/user/amit.ayre" target="_blank" rel="noopener">Amit Ayre</a>,
+          Staff Designer from India. Air rhymes with Ayre.
         </p>
       </div>
 
@@ -159,7 +159,7 @@ function setFilter(status) {
   text-transform: uppercase;
 }
 
-.hero h1 .ayre {
+.hero h1 .air {
   line-height: 0.82;
 }
 
