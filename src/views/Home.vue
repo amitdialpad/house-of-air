@@ -16,7 +16,7 @@
         <p class="tagline">Small systems that remove drag from design work.</p>
         <p class="byline">
           By <a href="https://dialpadhq.com/user/amit.ayre" target="_blank" rel="noopener">Amit Ayre</a>,
-          Staff Designer from India. Air rhymes with Ayre.
+          Staff Designer from India.
         </p>
       </div>
 
