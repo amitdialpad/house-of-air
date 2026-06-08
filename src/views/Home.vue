@@ -3,12 +3,12 @@
   <div class="home" :inert="!!modalProject">
     <header class="hero">
       <div class="hero-lockup">
-        <h1 aria-label="House of Air">
+        <h1 aria-label="House of Air, Ayre">
           <span class="title-row">
             <span class="word">House</span>
             <span class="word of">of</span>
           </span>
-          <span class="word air">Air</span>
+          <span class="word air">Air <span class="name-note">(Ayre)</span></span>
         </h1>
       </div>
 
@@ -160,7 +160,20 @@ function setFilter(status) {
 }
 
 .hero h1 .air {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.16em;
   line-height: 0.82;
+  white-space: nowrap;
+}
+
+.hero h1 .name-note {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.28em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
 }
 
 .hero-copy {
