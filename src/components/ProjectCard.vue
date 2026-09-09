@@ -13,9 +13,9 @@
         :alt="`Screenshot of ${project.title}`"
         loading="lazy"
       />
-      <div v-else class="preview-placeholder" :aria-label="`No preview available for ${project.title}`">
+      <div v-else class="preview-placeholder" :aria-label="`${project.previewTitle ? 'Graphic preview' : 'No preview available'} for ${project.title}`">
         <span class="preview-label">{{ project.previewLabel || 'Workflow' }}</span>
-        <span class="preview-title">No preview</span>
+        <span class="preview-title">{{ project.previewTitle || 'No preview' }}</span>
       </div>
     </div>
 
