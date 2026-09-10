@@ -1,8 +1,12 @@
-# House of Air
+# AIR
 
-Personal site for things I made for Dialpad outside the day job. Local-only, fully static.
+Amit’s Intelligent Resources.
 
-`House of Air` is a portfolio quietly disguised as a brag-doc. Each project is one markdown file with a screenshot; the homepage filters them by status (Live · Building · Paused · Archived · Idea).
+`AIR` is Amit Ayre’s digital desk drawer: a collection of small, useful tools, strange experiments, and useful systems. Each project is one markdown file with a screenshot; the homepage filters them by status (Live · Building · Paused · Archived · Idea).
+
+Useful things, made anyway.
+
+Production: [labs.amitayre.com](https://labs.amitayre.com)
 
 ## Run it locally
 
@@ -42,7 +46,7 @@ links:
 ...
 ```
 
-The first link in `links[]` becomes the **primary CTA** (big green pill in the modal). Placeholder URLs (`#`) hide the CTA gracefully.
+The first link in `links[]` becomes the **primary CTA** in the modal. Placeholder URLs (`#`) hide the CTA gracefully.
 
 ## Status taxonomy
 
@@ -56,26 +60,28 @@ The first link in `links[]` becomes the **primary CTA** (big green pill in the m
 
 Cards sort by status order (live → building → paused → archived → idea), then by most recent `shippedAt` within each group.
 
-## Build (if ever deployed)
+## Build and deploy
 
 ```bash
 npm run build    # → dist/
 ```
 
-Currently not deployed anywhere. The repo is a backup; the site lives at `localhost:5180`. If a future-self ever wants to host it, `dist/` is a plain HTML/CSS/JS/SVG folder that drops onto any static host.
+Netlify builds the site from the repository with `npm run build` and publishes `dist/`. The production domain is `labs.amitayre.com`.
+
+GitHub Pages uses the same source with `VITE_BASE_PATH=/house-of-air/` so assets resolve correctly from the repository subpath.
 
 ## Stack
 
 - Vue 3 + Vue Router + Vite
 - `marked` for the markdown bodies (parses inline; lightweight)
 - System fonts only — Iowan Old Style / Palatino for serif headlines, system sans for body, SF Mono for mono. No web fonts loaded.
-- Warm dark theme (`#0e0c0a`) with green accent (`#4ade80`) used for hover states, focus rings, the primary CTA, and the active filter pill
+- Warm paper theme with deep ink, sky blue, and small sun-yellow details
 - Hash routing (`createWebHashHistory`) so a static build deploys cleanly to any subpath
 
 ## Project structure
 
 ```
-~/house-of-air/
+~/made-anyway/
 ├── package.json
 ├── vite.config.js
 ├── index.html

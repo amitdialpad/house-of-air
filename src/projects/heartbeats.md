@@ -1,14 +1,13 @@
 ---
 slug: heartbeats
 title: Heartbeats
-oneLiner: A quiet daily writing page. Write the update, hit Done, Markdown lands in a private repo.
+oneLiner: A quiet daily writing page. Write the update, hit Done, keep a durable Markdown record.
 status: live
 shippedAt: 2026-06-06
-tags: [github-pages, writing, markdown, private-repo, workflow]
+tags: [writing, markdown, workflow]
 previewLabel: GitHub Pages
 links:
-  - { label: "Live Heartbeats page", url: "https://amitdialpad.github.io/heartbeats/" }
-  - { label: "GitHub repo", url: "https://github.com/amitdialpad/heartbeats" }
+  - { label: "Project link", url: "#" }
 ---
 
 ## Why I built it
@@ -17,12 +16,12 @@ Daily updates were getting scattered across chat, meetings, and half-remembered 
 
 ## What it is
 
-A static GitHub Pages app that opens directly into a writing surface. No dashboard first. No form fields. No status ceremony. Write the note in plain language, add screenshots or links if needed, then press **Done**.
+A small app that opens directly into a writing surface. No dashboard first. No form fields. No status ceremony. Write the note in plain language, add screenshots or links if needed, then press **Done**.
 
 ## How it works
 
-The public page is only the app shell. The actual updates live in a separate private repo as Markdown files. The browser publishes through the GitHub Contents API using a fine-grained token, so the workflow stays simple without needing a backend.
+Each update becomes a Markdown file, keeping the archive portable and easy to search. The writing flow stays deliberately small so it is useful every day instead of becoming another dashboard to maintain.
 
 ## Why it matters
 
-The habit is the product. It gives Josh a clear async read, gives me a place to state decisions or concerns cleanly, and keeps the important context from dissolving in Slack.
+The habit is the product. It gives me a place to state decisions or concerns clearly and keeps useful context from dissolving across conversations.

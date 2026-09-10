@@ -78,9 +78,9 @@ export function getProject(slug) {
 }
 
 export const STATUSES = {
-  live:     { label: 'Live',     color: 'oklch(77% 0.17 145)' },
-  building: { label: 'Building', color: 'oklch(77% 0.16 83)' },
-  paused:   { label: 'Paused',   color: 'oklch(76% 0.14 202)' },
-  archived: { label: 'Archived', color: 'oklch(65% 0.035 164)' },
-  idea:     { label: 'Idea',     color: 'oklch(72% 0.13 318)' }
+  live:     { label: 'Live',     color: 'oklch(74% 0.14 151)' },
+  building: { label: 'Building', color: 'oklch(78% 0.15 77)' },
+  paused:   { label: 'Paused',   color: 'oklch(72% 0.13 203)' },
+  archived: { label: 'Archived', color: 'oklch(72% 0.025 255)' },
+  idea:     { label: 'Idea',     color: 'oklch(70% 0.13 311)' }
 }

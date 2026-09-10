@@ -1,31 +1,23 @@
 ---
 slug: pr-previews
 title: PR Previews That Don't Die
-oneLiner: Daily cron refreshes a hidden marker so deploys never hit the 14-day cull.
+oneLiner: A tiny reminder system for keeping long-lived prototype links available.
 status: live
 shippedAt: 2026-05-01
-tags: [cron, github-api, zsh, skills, automation]
-previewLabel: GitHub workflow
+tags: [automation, previews, workflow]
+previewLabel: Project link
 links:
-  - { label: "/extend skill", url: "#" }
+  - { label: "Project link", url: "#" }
 ---
 
 ## The problem
 
-Prototype PR previews get killed after 14 days. The cleanup workflow removes the deploy folder and the URL goes 404. Painful when prototypes live 3 to 6 months and PMs ask for the link. Especially tiring when you work in a different timezone. Your PM or ENG pings you at 2AM saying the preview link from Beacon is dead and you cannot do anything till next morning. I never want that situation to come up.
+Prototype links often need to survive longer than the short review window they were created for. A useful reference can disappear just when someone returns to it weeks later.
 
 ## What I built
 
-A tiny automation that runs on my laptop daily at 2 PM. It scans every open PR I authored, finds anything getting close to the 14 day cutoff, and refreshes the PR description with a hidden HTML comment marker. GitHub sees activity, the cleanup never marks it stale, the preview URL keeps working forever.
+A small local helper that keeps track of preview age and reminds me before an important link expires. It also gives me a quick manual action when a demo or review is coming up.
 
-## Zero footprint
+## Zero ongoing work
 
-No new commits. No new comments on the PR thread. No labels added or removed. No CI rebuilds. The marker is invisible in the rendered Markdown.
-
-## The /extend command
-
-Manual override I can hit anytime. `/extend` refreshes anything stale right now (panic button before a demo). `/extend all` refreshes everything. `/extend status` shows me what last night's run touched.
-
-## Day to day
-
-Nothing. macOS banner pops up at 2 PM if anything got refreshed, otherwise silence. My preview URLs stay alive without me thinking about it.
+The helper stays quiet unless something needs attention. The goal is simply to make old-but-useful prototypes dependable without turning preview maintenance into another weekly task.

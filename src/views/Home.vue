@@ -3,24 +3,40 @@
   <div class="home" :inert="!!modalProject">
     <header class="hero">
       <div class="hero-lockup">
-        <h1 aria-label="House of Air, Ayre">
-          <span class="title-row">
-            <span class="word">House</span>
-            <span class="word of">of</span>
-          </span>
-          <span class="word air">Air <span class="name-note">(Ayre)</span></span>
-        </h1>
+        <div class="kicker">
+          <span>Personal utility archive</span>
+          <span>Est. whenever</span>
+        </div>
+
+        <div class="identity">
+          <h1 aria-label="AIR">
+            <span>A</span><span>I</span><span>R</span><i aria-hidden="true"></i>
+          </h1>
+          <p class="expansion" aria-label="Amit's Intelligent Resources">
+            <span>Amit’s</span>
+            <span>Intelligent</span>
+            <span>Resources</span>
+          </p>
+        </div>
       </div>
 
       <div class="hero-copy">
-        <p class="tagline">Small systems that remove drag from design work.</p>
-        <p class="byline">
-          By <a href="https://dialpadhq.com/user/amit.ayre" target="_blank" rel="noopener">Amit Ayre</a>,
-          Staff Designer from India.
+        <p class="tagline">
+          A digital desk drawer full of small, useful tools—ready whenever you need one.
+        </p>
+        <p class="personality">
+          Useful things,<br />
+          <em>made anyway.</em>
         </p>
       </div>
 
-      <StatusLegend :counts="counts" :active="activeFilter" @filter="setFilter" />
+      <div class="drawer-tools">
+        <div class="drawer-label" aria-hidden="true">
+          <span class="drawer-number">Drawer 01</span>
+          <span class="drawer-title">Things worth keeping</span>
+        </div>
+        <StatusLegend :counts="counts" :active="activeFilter" @filter="setFilter" />
+      </div>
     </header>
 
     <main id="main-grid" class="project-board" :aria-label="boardLabel">
@@ -42,7 +58,8 @@
     </main>
 
     <footer class="footer">
-      <p>Built quietly · {{ currentYear }}</p>
+      <p><strong>AIR</strong> · Amit’s Intelligent Resources · {{ currentYear }}</p>
+      <p>Useful things, made anyway.</p>
     </footer>
 
     <ProjectModal :project="modalProject" @close="closeModal" />
@@ -98,124 +115,166 @@ function setFilter(status) {
 
 <style scoped>
 .home {
-  max-width: 1240px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: clamp(48px, 7vw, 96px) clamp(20px, 4vw, 44px) 64px;
+  padding: clamp(28px, 5vw, 68px) clamp(18px, 4vw, 48px) 64px;
   min-width: 0;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(280px, 0.72fr) minmax(320px, 1fr);
-  column-gap: clamp(28px, 5vw, 80px);
-  row-gap: clamp(24px, 3vw, 36px);
-  align-items: center;
-  padding-bottom: clamp(28px, 4vw, 44px);
-  margin-bottom: clamp(32px, 5vw, 56px);
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: minmax(380px, 1.28fr) minmax(300px, 0.72fr);
+  column-gap: clamp(36px, 7vw, 112px);
+  row-gap: clamp(32px, 5vw, 64px);
+  align-items: end;
+  padding: clamp(22px, 4vw, 48px);
+  margin-bottom: clamp(20px, 3vw, 36px);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
   min-width: 0;
+  overflow: hidden;
+  position: relative;
 }
 
-.hero-lockup {
-  display: grid;
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -102px;
+  top: -116px;
+  border-radius: 50%;
+  border: 34px solid var(--sun);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero-lockup { min-width: 0; }
+
+.kicker {
+  display: flex;
+  justify-content: space-between;
   gap: 20px;
+  width: 100%;
+  margin-bottom: clamp(30px, 5vw, 64px);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(112px, 0.28fr);
+  gap: clamp(18px, 3vw, 40px);
+  align-items: end;
 }
 
 .hero h1 {
   display: flex;
-  flex-direction: column;
-  gap: 0.08em;
-  width: max-content;
-  max-width: 100%;
+  align-items: baseline;
   margin: 0;
   color: var(--text);
   font-family: var(--font-display);
-  font-size: clamp(3.25rem, 7.4vw, 5rem);
-  font-weight: 800;
-  line-height: 0.82;
-  letter-spacing: -0.025em;
+  font-size: clamp(7rem, 18vw, 14.5rem);
+  font-weight: 700;
+  line-height: 0.66;
+  letter-spacing: -0.095em;
   text-transform: uppercase;
 }
 
-.hero h1 .word {
-  display: block;
+.hero h1 i {
+  width: 0.16em;
+  height: 0.16em;
+  margin-left: 0.08em;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: 0 0 auto;
 }
 
-.hero h1 .title-row {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.18em;
-  line-height: 0.82;
-}
-
-.hero h1 .of {
-  color: var(--text);
-  font-family: var(--font-display);
-  font-size: 1em;
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 0.82;
-  text-transform: uppercase;
-}
-
-.hero h1 .air {
-  display: inline-flex;
-  align-items: baseline;
+.expansion {
+  display: flex;
+  flex-direction: column;
   gap: 0.16em;
-  line-height: 0.82;
-  white-space: nowrap;
+  margin: 0 0 -0.15em;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: clamp(0.74rem, 1.25vw, 0.94rem);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
 }
 
-.hero h1 .name-note {
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.28em;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  line-height: 1;
-}
-
-.hero-copy {
-  max-width: 58ch;
-  min-width: 0;
-}
+.hero-copy { min-width: 0; }
 
 .tagline {
-  max-width: 30ch;
-  margin: 0 0 16px;
+  max-width: 24ch;
+  margin: 0 0 clamp(40px, 7vw, 84px);
   color: var(--text);
   font-family: var(--font-serif);
-  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-size: clamp(1.45rem, 2.4vw, 2.1rem);
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.25;
-  text-transform: none;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
   text-wrap: balance;
 }
 
-.byline {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.65;
+.personality {
   margin: 0;
-  overflow-wrap: anywhere;
+  color: var(--text-muted);
+  font-size: clamp(0.9rem, 1.25vw, 1rem);
+  line-height: 1.35;
 }
 
-.byline a {
+.personality em {
+  color: var(--accent-dark);
+  font-family: var(--font-serif);
+  font-size: 1.26em;
+}
+
+.drawer-tools {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(190px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: end;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.drawer-label {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 300px);
+  padding: 13px 16px 15px;
   color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid var(--line-strong);
-  transition: border-color 160ms ease;
+  background: var(--sun);
+  border-radius: 4px 4px 10px 10px;
+  transform: rotate(-1deg);
+  box-shadow: 0 2px 0 oklch(26% 0.03 255 / 0.14);
 }
 
-.byline a:hover {
-  border-bottom-color: var(--accent);
+.drawer-number {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.drawer-title {
+  margin-top: 3px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .project-board {
-  display: block;
-  border-top: 1px solid var(--line-strong);
+  display: grid;
+  gap: 14px;
 }
 
 .card-move,
@@ -236,8 +295,9 @@ function setFilter(status) {
 }
 
 .card-empty {
-  border-bottom: 1px solid var(--line);
-  padding: 42px 0;
+  border: 1px dashed var(--line-strong);
+  border-radius: 18px;
+  padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,7 +314,7 @@ function setFilter(status) {
 .plus {
   font-family: var(--font-display);
   font-size: 3rem;
-  color: var(--line-strong);
+  color: var(--accent);
   line-height: 1;
 }
 
@@ -266,8 +326,11 @@ function setFilter(status) {
 }
 
 .footer {
-  margin-top: 72px;
-  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 64px;
+  padding: 26px 2px 0;
   border-top: 1px solid var(--line);
   color: var(--text-muted);
   font-size: 0.8rem;
@@ -275,42 +338,78 @@ function setFilter(status) {
   letter-spacing: 0.02em;
 }
 
+.footer p { margin: 0; }
+.footer strong { color: var(--text); }
+
 @media (max-width: 840px) {
   .hero {
     grid-template-columns: 1fr;
     align-items: start;
   }
 
-  .tagline {
-    max-width: 13ch;
+  .hero-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 28px;
+    align-items: end;
   }
+
+  .tagline { margin-bottom: 0; }
 }
 
 @media (max-width: 620px) {
   .home {
-    padding: 40px 18px 52px;
+    padding: 16px 12px 44px;
     max-width: 100vw;
     overflow-x: clip;
   }
 
   .hero {
-    gap: 28px;
-    margin-bottom: 40px;
+    gap: 36px;
+    padding: 22px 18px 24px;
+    margin-bottom: 16px;
+    border-radius: 20px;
   }
 
   .hero h1 {
-    font-size: clamp(3.3rem, 16vw, 4.6rem);
-    gap: 0.08em;
+    display: block;
+    font-size: clamp(6.2rem, 33vw, 9rem);
+    line-height: 0.78;
+    white-space: nowrap;
   }
+
+  .hero h1 i {
+    display: inline-block;
+    vertical-align: 0.08em;
+  }
+
+  .identity {
+    display: block;
+  }
+
+  .expansion {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    margin: 20px 0 0;
+    font-size: 0.78rem;
+  }
+
+  .expansion span:not(:last-child)::after {
+    content: " /";
+    color: var(--accent);
+  }
+  .kicker span:last-child { display: none; }
+  .hero-copy { display: block; }
 
   .tagline {
-    font-size: clamp(1.35rem, 7vw, 1.75rem);
-    max-width: 22ch;
+    font-size: clamp(1.4rem, 7vw, 1.8rem);
+    margin-bottom: 34px;
   }
 
-  .byline {
-    max-width: min(34ch, calc(100vw - 36px));
-  }
+  .drawer-tools { grid-template-columns: 1fr; }
+  .drawer-label { width: 210px; }
+  .footer { flex-direction: column; }
 
 }
 </style>

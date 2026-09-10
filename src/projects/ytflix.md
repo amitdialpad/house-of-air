@@ -8,7 +8,7 @@ tags: [chrome-extension, youtube, javascript, open-source, stupid-project]
 previewLabel: Useless project #4984
 previewTitle: YTFLIX
 links:
-  - { label: "Get YTFLIX on GitHub", url: "https://github.com/amitdialpad/ytflix-extension" }
+  - { label: "Get YTFLIX on GitHub", url: "#" }
 ---
 
 ## Useless project #4984

@@ -48,11 +48,10 @@ const visibleStatuses = computed(() =>
 
 <style scoped>
 .legend {
-  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 14px;
-  padding-top: 18px;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .item {
@@ -65,24 +64,25 @@ const visibleStatuses = computed(() =>
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--text-muted);
-  background: transparent;
-  border: 0;
-  padding: 8px 0 8px 12px;
-  border-radius: 0;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 999px;
   cursor: pointer;
-  border-left: 1px solid transparent;
-  transition: color 160ms ease, border-color 160ms ease, opacity 160ms ease;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease, transform 160ms ease;
   font-weight: 500;
 }
 
 .item:hover:not(.active) {
   color: var(--text);
-  border-left-color: var(--line-strong);
+  border-color: var(--line-strong);
+  transform: translateY(-1px);
 }
 
 .item.active {
-  color: var(--text);
-  border-left-color: var(--accent);
+  color: var(--surface);
+  background: var(--text);
+  border-color: var(--text);
 }
 
 .dot {
@@ -102,7 +102,7 @@ const visibleStatuses = computed(() =>
 }
 
 .item.active .count {
-  color: var(--text);
+  color: var(--surface);
   font-weight: 600;
 }
 
@@ -113,7 +113,8 @@ const visibleStatuses = computed(() =>
 @media (max-width: 620px) {
   .legend {
     display: flex;
-    gap: 4px 14px;
+    justify-content: flex-start;
+    gap: 7px;
     max-width: 22rem;
   }
 

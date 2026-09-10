@@ -1,31 +1,36 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  --bg: oklch(18% 0.035 164);
-  --bg-deep: oklch(13% 0.03 164);
-  --surface: oklch(23% 0.034 164);
-  --surface-raised: oklch(27% 0.036 164);
-  --surface-hover: oklch(30% 0.04 164);
-  --line: oklch(37% 0.035 164);
-  --line-strong: oklch(51% 0.045 164);
-  --text: oklch(92% 0.02 142);
-  --text-muted: oklch(74% 0.028 150);
-  --text-soft: oklch(61% 0.028 150);
+  --bg: oklch(95% 0.013 91);
+  --bg-deep: oklch(91% 0.016 91);
+  --surface: oklch(98.5% 0.009 91);
+  --surface-raised: oklch(100% 0 0);
+  --surface-hover: oklch(96% 0.018 91);
+  --line: oklch(83% 0.018 88);
+  --line-strong: oklch(70% 0.024 88);
+  --text: oklch(27% 0.03 255);
+  --text-muted: oklch(50% 0.025 255);
+  --text-soft: oklch(62% 0.022 255);
 
-  --accent: oklch(77% 0.17 145);
-  --accent-hover: oklch(83% 0.18 145);
-  --accent-ink: oklch(16% 0.04 155);
-  --signal: oklch(76% 0.14 202);
-  --ochre: oklch(77% 0.16 83);
-  --clay: oklch(70% 0.15 28);
-  --plum: oklch(72% 0.13 318);
-  --backdrop: oklch(10% 0.028 164 / 0.86);
-  --focus: oklch(84% 0.19 145 / 0.92);
+  --accent: oklch(63% 0.22 258);
+  --accent-dark: oklch(49% 0.22 258);
+  --accent-hover: oklch(55% 0.23 258);
+  --accent-ink: oklch(99% 0 0);
+  --signal: oklch(72% 0.13 203);
+  --sun: oklch(86% 0.15 88);
+  --ochre: oklch(78% 0.15 77);
+  --clay: oklch(70% 0.17 35);
+  --plum: oklch(70% 0.13 311);
+  --backdrop: oklch(24% 0.035 255 / 0.72);
+  --focus: oklch(58% 0.23 258 / 0.92);
 
-  --status-live: var(--accent);
+  --shadow-soft: 0 22px 70px oklch(36% 0.035 255 / 0.08);
+  --shadow-card: 0 18px 32px oklch(36% 0.035 255 / 0.11);
+
+  --status-live: oklch(74% 0.14 151);
   --status-building: var(--ochre);
   --status-paused: var(--signal);
-  --status-archived: oklch(65% 0.035 164);
+  --status-archived: oklch(72% 0.025 255);
   --status-idea: var(--plum);
 
   --space-1: 4px;
@@ -37,7 +42,7 @@
   --space-7: 48px;
   --space-8: 72px;
 
-  --font-display: "Avenir Next Condensed", "DIN Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-display: "Arial Black", "Avenir Next", "Helvetica Neue", sans-serif;
   --font-serif: "Iowan Old Style", "Palatino Linotype", "Palatino", "Baskerville", Georgia, serif;
   --font-sans: "Avenir Next", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
@@ -59,7 +64,8 @@ html, body {
 body {
   min-height: 100vh;
   background:
-    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 42%, var(--bg-deep) 100%);
+    radial-gradient(circle at 12% 6%, oklch(100% 0 0 / 0.88), transparent 30rem),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
 }
 
 a { color: inherit; }
@@ -82,8 +88,8 @@ a { color: inherit; }
   overflow: hidden;
   pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 0 28%, oklch(77% 0.17 145 / 0.045) 42%, transparent 58% 100%),
-    linear-gradient(72deg, transparent 0 44%, oklch(76% 0.14 202 / 0.032) 52%, transparent 64% 100%);
+    linear-gradient(115deg, transparent 0 28%, oklch(63% 0.22 258 / 0.035) 42%, transparent 58% 100%),
+    linear-gradient(72deg, transparent 0 44%, oklch(86% 0.15 88 / 0.05) 52%, transparent 64% 100%);
   background-size: 190% 100%, 170% 100%;
   animation: atmosphere-sweep 34s linear infinite, atmosphere-breathe 18s ease-in-out infinite alternate;
 }
@@ -98,8 +104,8 @@ a { color: inherit; }
 
 .site-atmosphere::before {
   background-image:
-    linear-gradient(90deg, oklch(92% 0.02 142 / 0.045) 1px, transparent 1px),
-    linear-gradient(0deg, oklch(92% 0.02 142 / 0.032) 1px, transparent 1px);
+    linear-gradient(90deg, oklch(27% 0.03 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, oklch(27% 0.03 255 / 0.025) 1px, transparent 1px);
   background-size: 112px 112px, 112px 112px;
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 18%, black 72%, transparent 100%);
   mask-image: linear-gradient(180deg, transparent 0%, black 18%, black 72%, transparent 100%);
@@ -113,7 +119,7 @@ a { color: inherit; }
     repeating-linear-gradient(
       112deg,
       transparent 0 84px,
-      oklch(77% 0.17 145 / 0.035) 85px,
+      oklch(63% 0.22 258 / 0.03) 85px,
       transparent 87px 176px
     );
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 70%, transparent 100%);

@@ -32,6 +32,8 @@
         <span v-for="t in project.tags.slice(0, 4)" :key="t" class="tag">{{ t }}</span>
       </div>
     </div>
+
+    <span class="open-arrow" aria-hidden="true">↗</span>
   </router-link>
 </template>
 
@@ -59,14 +61,17 @@ function formatDate(iso) {
 .project-row {
   --status-color: var(--status-live);
   display: grid;
-  grid-template-columns: 56px minmax(220px, 360px) minmax(0, 1fr);
-  gap: clamp(18px, 3vw, 34px);
+  grid-template-columns: 48px minmax(210px, 322px) minmax(0, 1fr) 38px;
+  gap: clamp(16px, 2.6vw, 34px);
   align-items: center;
-  padding: clamp(22px, 4vw, 36px) 0;
-  border-bottom: 1px solid var(--line);
+  padding: 14px 18px 14px 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in oklch, var(--surface) 92%, transparent);
+  box-shadow: 0 1px 0 oklch(26% 0.03 255 / 0.06);
   text-decoration: none;
   color: inherit;
-  transition: color 180ms ease, background 180ms ease;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease, box-shadow 220ms ease;
   min-width: 0;
 }
 
@@ -77,11 +82,13 @@ function formatDate(iso) {
 .project-row.idea { --status-color: var(--status-idea); }
 
 .project-row:hover {
-  background: var(--surface);
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-card);
 }
 
 .project-row:hover .title {
-  color: var(--accent-hover);
+  color: var(--accent-dark);
 }
 
 .project-row:focus-visible {
@@ -90,18 +97,24 @@ function formatDate(iso) {
 }
 
 .number {
-  color: var(--status-color);
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.3rem);
-  font-weight: 800;
-  line-height: 0.9;
-  opacity: 0.95;
+  align-self: start;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: var(--text);
+  background: var(--status-color);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 650;
+  line-height: 1;
 }
 
 .screenshot {
   aspect-ratio: 16 / 10;
   background: var(--surface-raised);
-  border-radius: 6px;
+  border-radius: 11px;
   overflow: hidden;
   border: 1px solid var(--line);
   transform-origin: center;
@@ -109,8 +122,8 @@ function formatDate(iso) {
 }
 
 .project-row:hover .screenshot {
-  border-color: var(--status-color);
-  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  transform: scale(1.008);
 }
 
 .screenshot img {
@@ -128,8 +141,8 @@ function formatDate(iso) {
   height: 100%;
   padding: 18px;
   background:
-    linear-gradient(135deg, oklch(77% 0.17 145 / 0.1), transparent 58%),
-    repeating-linear-gradient(120deg, transparent 0 18px, oklch(92% 0.02 142 / 0.045) 19px, transparent 20px 42px),
+    linear-gradient(135deg, color-mix(in oklch, var(--status-color) 22%, transparent), transparent 58%),
+    repeating-linear-gradient(120deg, transparent 0 18px, oklch(31% 0.03 255 / 0.045) 19px, transparent 20px 42px),
     var(--surface-raised);
 }
 
@@ -171,14 +184,13 @@ function formatDate(iso) {
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.7rem);
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.4vw, 3.15rem);
   margin: 0 0 10px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 0.92;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1;
   color: var(--text);
-  text-transform: uppercase;
   text-wrap: balance;
   transition: color 180ms ease;
 }
@@ -202,26 +214,47 @@ function formatDate(iso) {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--text-muted);
-  background: var(--surface-raised);
+  background: var(--bg);
   padding: 4px 7px;
   border-radius: 4px;
   border: 1px solid var(--line);
 }
 
+.open-arrow {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: color 180ms ease, background 180ms ease, transform 220ms ease;
+}
+
+.project-row:hover .open-arrow {
+  color: var(--surface);
+  background: var(--text);
+  border-color: var(--text);
+  transform: rotate(6deg);
+}
+
 @media (max-width: 880px) {
   .project-row {
-    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-columns: 44px minmax(0, 1fr) 38px;
     align-items: start;
   }
 
   .screenshot {
-    grid-column: 2;
+    grid-column: 2 / -1;
     max-width: 420px;
   }
 
   .summary {
     grid-column: 2;
   }
+
+  .open-arrow { grid-column: 3; }
 
 }
 
@@ -237,14 +270,17 @@ function formatDate(iso) {
 
   .number,
   .screenshot,
-  .summary {
+  .summary,
+  .open-arrow {
     grid-column: 1;
     max-width: 100%;
   }
 
   .number {
-    font-size: 2rem;
+    font-size: 0.68rem;
   }
+
+  .open-arrow { display: none; }
 
   .title {
     font-size: clamp(2rem, 12vw, 3rem);
