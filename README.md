@@ -6,7 +6,7 @@ Amit’s Intelligent Resources.
 
 Useful things, made anyway.
 
-Production: [labs.amitayre.com](https://labs.amitayre.com)
+Production: [air.amitayre.com](https://air.amitayre.com)
 
 ## Run it locally
 
@@ -66,7 +66,7 @@ Cards sort by status order (live → building → paused → archived → idea),
 npm run build    # → dist/
 ```
 
-Netlify builds the site from the repository with `npm run build` and publishes `dist/`. The production domain is `labs.amitayre.com`.
+Netlify builds the site from the repository with `npm run build` and publishes `dist/`. The primary production domain is `air.amitayre.com`; `labs.amitayre.com` remains attached as a compatibility alias.
 
 GitHub Pages uses the same source with `VITE_BASE_PATH=/house-of-air/` so assets resolve correctly from the repository subpath.
 
