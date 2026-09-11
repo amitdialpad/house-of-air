@@ -6,7 +6,7 @@ status: live
 shippedAt: 2026-03-15
 tags: [education, ai-tools, workshops]
 links:
-  - { label: "Session guide", url: "#" }
+  - { label: "Session guide", url: "https://amitdialpad.github.io/design-pair-sessions/sessions/session-1.html" }
 ---
 
 ## Why I built it

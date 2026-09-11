@@ -6,7 +6,7 @@ status: live
 shippedAt: 2026-06-06
 tags: [writing, markdown, workflow]
 links:
-  - { label: "Project link", url: "#" }
+  - { label: "Live Heartbeats page", url: "https://amitdialpad.github.io/heartbeats/" }
 ---
 
 ## Why I built it

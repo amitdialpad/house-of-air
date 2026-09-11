@@ -6,7 +6,7 @@ status: live
 shippedAt: 2026-04-12
 tags: [automation, newsletter, design-system, weekly]
 links:
-  - { label: "Project link", url: "#" }
+  - { label: "Beacon Brief page", url: "https://amitdialpad.github.io/design-pair-sessions/#beacon-brief" }
 ---
 
 ## Why I built it
