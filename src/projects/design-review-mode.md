@@ -5,8 +5,6 @@ oneLiner: Figma-style comments for live browser prototypes: point, click, commen
 status: paused
 shippedAt: 2026-02-08
 tags: [vue, design-review, prototypes]
-screenshot: /thumbnails/design-review-mode.svg
-thumbnailAlt: A browser prototype with three contextual comment pins
 links:
   - { label: "Project link", url: "#" }
 ---

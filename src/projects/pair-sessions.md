@@ -5,8 +5,6 @@ oneLiner: Buddy-up workshops for designers learning to work with AI tools. Three
 status: live
 shippedAt: 2026-03-15
 tags: [education, ai-tools, workshops]
-screenshot: /thumbnails/pair-sessions.svg
-thumbnailAlt: Two collaborators passing control across three sessions
 links:
   - { label: "Session guide", url: "#" }
 ---

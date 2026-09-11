@@ -64,7 +64,6 @@ export const projects = Object.entries(modules)
       ['slug', frontmatter.slug],
       ['title', frontmatter.title],
       ['oneLiner', frontmatter.oneLiner],
-      ['screenshot', frontmatter.screenshot],
       ['description', body.trim()]
     ].filter(([, value]) => !value).map(([field]) => field)
 

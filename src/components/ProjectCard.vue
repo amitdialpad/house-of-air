@@ -6,19 +6,6 @@
   >
     <span class="number" aria-hidden="true">{{ paddedIndex }}</span>
 
-    <div class="screenshot">
-      <img
-        v-if="project.screenshot"
-        :src="project.screenshot"
-        :alt="project.thumbnailAlt || `Visual preview of ${project.title}`"
-        loading="lazy"
-      />
-      <div v-else class="preview-placeholder" :aria-label="`${project.previewTitle ? 'Graphic preview' : 'No preview available'} for ${project.title}`">
-        <span class="preview-label">{{ project.previewLabel || 'Workflow' }}</span>
-        <span class="preview-title">{{ project.previewTitle || 'No preview' }}</span>
-      </div>
-    </div>
-
     <div class="summary">
       <div class="meta">
         <StatusPill :status="project.status" />
@@ -61,7 +48,7 @@ function formatDate(iso) {
 .project-row {
   --status-color: var(--status-live);
   display: grid;
-  grid-template-columns: 48px minmax(210px, 322px) minmax(0, 1fr) 38px;
+  grid-template-columns: 48px minmax(0, 1fr) 38px;
   gap: clamp(16px, 2.6vw, 34px);
   align-items: center;
   padding: 14px 18px 14px 14px;
@@ -109,58 +96,6 @@ function formatDate(iso) {
   font-size: 0.68rem;
   font-weight: 650;
   line-height: 1;
-}
-
-.screenshot {
-  aspect-ratio: 16 / 10;
-  background: var(--surface-raised);
-  border-radius: 11px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  transform-origin: center;
-  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease;
-}
-
-.project-row:hover .screenshot {
-  border-color: var(--line-strong);
-  transform: scale(1.008);
-}
-
-.screenshot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.preview-placeholder {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  padding: 18px;
-  background:
-    linear-gradient(135deg, color-mix(in oklch, var(--status-color) 22%, transparent), transparent 58%),
-    repeating-linear-gradient(120deg, transparent 0 18px, oklch(31% 0.03 255 / 0.045) 19px, transparent 20px 42px),
-    var(--surface-raised);
-}
-
-.preview-label,
-.preview-title {
-  font-family: var(--font-mono);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.preview-label {
-  color: var(--text-soft);
-  font-size: 0.68rem;
-}
-
-.preview-title {
-  color: var(--text);
-  font-size: 0.9rem;
 }
 
 .summary {
@@ -245,11 +180,6 @@ function formatDate(iso) {
     align-items: start;
   }
 
-  .screenshot {
-    grid-column: 2 / -1;
-    max-width: 420px;
-  }
-
   .summary {
     grid-column: 2;
   }
@@ -269,7 +199,6 @@ function formatDate(iso) {
   }
 
   .number,
-  .screenshot,
   .summary,
   .open-arrow {
     grid-column: 1;

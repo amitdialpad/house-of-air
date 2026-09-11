@@ -5,8 +5,6 @@ oneLiner: A tiny reminder system for keeping long-lived prototype links availabl
 status: live
 shippedAt: 2026-05-01
 tags: [automation, previews, workflow]
-screenshot: /thumbnails/pr-previews.svg
-thumbnailAlt: Layered browser previews kept alive by a continuous loop
 links:
   - { label: "Project link", url: "#" }
 ---

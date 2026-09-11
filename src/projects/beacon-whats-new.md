@@ -5,8 +5,6 @@ oneLiner: A small in-product feed that makes design-system changes easier to dis
 status: building
 shippedAt: 2026-05-08
 tags: [design-system, release-notes, vue]
-screenshot: /thumbnails/beacon-whats-new.svg
-thumbnailAlt: A product window with a colorful updates drawer
 links:
   - { label: "Preview", url: "#" }
   - { label: "Source", url: "#" }

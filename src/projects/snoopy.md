@@ -5,8 +5,6 @@ oneLiner: A research pipeline that turns structured product analytics into reada
 status: live
 shippedAt: 2026-02-23
 tags: [python, analytics, research, automation]
-screenshot: /thumbnails/snoopy.svg
-thumbnailAlt: Structured analytics flowing through checks into a readable brief
 links:
   - { label: "Project link", url: "#" }
 ---
