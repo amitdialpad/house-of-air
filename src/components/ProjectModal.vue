@@ -12,11 +12,11 @@
             rel="noopener"
             class="screenshot screenshot-link"
           >
-            <img :src="project.screenshot" :alt="`Screenshot of ${project.title}`" />
+            <img :src="project.screenshot" :alt="project.thumbnailAlt || `Visual preview of ${project.title}`" />
             <div class="screenshot-cta" aria-hidden="true">Open link</div>
           </a>
           <div v-else-if="project.screenshot" class="screenshot">
-            <img :src="project.screenshot" :alt="`Screenshot of ${project.title}`" />
+            <img :src="project.screenshot" :alt="project.thumbnailAlt || `Visual preview of ${project.title}`" />
           </div>
 
           <div class="hero-meta">

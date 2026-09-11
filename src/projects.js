@@ -60,6 +60,18 @@ function resolveAsset(path) {
 export const projects = Object.entries(modules)
   .map(([path, raw]) => {
     const { frontmatter, body } = parseFrontmatter(raw)
+    const missing = [
+      ['slug', frontmatter.slug],
+      ['title', frontmatter.title],
+      ['oneLiner', frontmatter.oneLiner],
+      ['screenshot', frontmatter.screenshot],
+      ['description', body.trim()]
+    ].filter(([, value]) => !value).map(([field]) => field)
+
+    if (missing.length) {
+      throw new Error(`${path} is missing required project content: ${missing.join(', ')}`)
+    }
+
     return {
       ...frontmatter,
       screenshot: resolveAsset(frontmatter.screenshot),

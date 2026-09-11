@@ -5,8 +5,8 @@ oneLiner: I got bored with the YouTube UI, so I made a Chrome extension that tur
 status: live
 shippedAt: 2026-09-09
 tags: [chrome-extension, youtube, javascript, open-source, stupid-project]
-previewLabel: Useless project #4984
-previewTitle: YTFLIX
+screenshot: /thumbnails/ytflix.svg
+thumbnailAlt: A cinematic video library with a bold play control and content rails
 links:
   - { label: "Get YTFLIX on GitHub", url: "#" }
 ---

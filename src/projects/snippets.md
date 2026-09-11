@@ -5,6 +5,8 @@ oneLiner: A weekly collection that makes shared writing easier to find and read.
 status: live
 shippedAt: 2026-04-15
 tags: [writing, automation, weekly]
+screenshot: /thumbnails/snippets.svg
+thumbnailAlt: Colorful written contributions gathered into one edition
 links:
   - { label: "Project link", url: "#" }
 ---

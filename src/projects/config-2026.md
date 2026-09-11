@@ -6,6 +6,7 @@ status: building
 shippedAt: 2026-06-29
 tags: [figma-config, design, video-notes, team-learning, github-pages]
 screenshot: /screenshots/config-2026.png
+thumbnailAlt: The Config 2026 notes and watch-list interface
 links:
   - { label: "View notes", url: "#" }
   - { label: "Official playlist", url: "https://www.youtube.com/playlist?list=PLXDU_eVOJTx6erPKfFHtCNbyCmcCn4zrp" }

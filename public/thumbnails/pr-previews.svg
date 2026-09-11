@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">PR Previews That Don't Die cover</title><desc id="desc">Layered preview windows kept alive by a continuous loop.</desc>
+  <rect width="1280" height="800" fill="#dceff1"/>
+  <g stroke="#24304a" stroke-width="12"><rect x="180" y="178" width="720" height="440" rx="24" fill="#65c79a" transform="rotate(-7 540 398)"/><rect x="250" y="138" width="720" height="440" rx="24" fill="#f3cf56" transform="rotate(4 610 358)"/><rect x="282" y="174" width="720" height="440" rx="24" fill="#fffdf8"/></g>
+  <path d="M282 248H1002" stroke="#24304a" stroke-width="12"/><circle cx="330" cy="212" r="10" fill="#ef775d"/><circle cx="366" cy="212" r="10" fill="#f3cf56"/><circle cx="402" cy="212" r="10" fill="#65c79a"/>
+  <path d="M430 400C500 300 570 300 640 400C710 500 780 500 850 400C780 300 710 300 640 400C570 500 500 500 430 400" fill="none" stroke="#315bea" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1048" cy="612" r="74" fill="#ef775d" stroke="#24304a" stroke-width="12"/><path d="M1022 612l22 22 42-48" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

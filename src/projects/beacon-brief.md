@@ -5,6 +5,8 @@ oneLiner: A weekly design-system digest, automatically turned into plain-English
 status: live
 shippedAt: 2026-04-12
 tags: [automation, newsletter, design-system, weekly]
+screenshot: /thumbnails/beacon-brief.svg
+thumbnailAlt: Stacked weekly notes beside a bright beacon
 links:
   - { label: "Project link", url: "#" }
 ---

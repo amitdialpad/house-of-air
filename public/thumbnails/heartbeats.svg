@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">Heartbeats cover</title><desc id="desc">A calm writing page with a pulse moving through a daily archive.</desc>
+  <rect width="1280" height="800" fill="#f3efe5"/>
+  <circle cx="1080" cy="110" r="180" fill="#65c79a" opacity=".78"/>
+  <rect x="190" y="82" width="760" height="636" rx="26" fill="#fffdf8" stroke="#24304a" stroke-width="13"/>
+  <rect x="254" y="152" width="220" height="24" rx="12" fill="#315bea"/>
+  <path d="M254 246H854M254 302H774M254 358H822M254 510H714M254 566H822" stroke="#24304a" stroke-width="17" stroke-linecap="round" opacity=".22"/>
+  <path d="M252 436h128l44-78 66 146 70-184 58 116h238" fill="none" stroke="#ef775d" stroke-width="18" stroke-linejoin="round" stroke-linecap="round"/>
+  <g fill="#24304a"><circle cx="1042" cy="408" r="18"/><circle cx="1042" cy="476" r="18" opacity=".65"/><circle cx="1042" cy="544" r="18" opacity=".35"/><circle cx="1042" cy="612" r="18" opacity=".16"/></g>
+</svg>

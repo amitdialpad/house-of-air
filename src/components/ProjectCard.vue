@@ -10,7 +10,7 @@
       <img
         v-if="project.screenshot"
         :src="project.screenshot"
-        :alt="`Screenshot of ${project.title}`"
+        :alt="project.thumbnailAlt || `Visual preview of ${project.title}`"
         loading="lazy"
       />
       <div v-else class="preview-placeholder" :aria-label="`${project.previewTitle ? 'Graphic preview' : 'No preview available'} for ${project.title}`">

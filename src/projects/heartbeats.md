@@ -5,7 +5,8 @@ oneLiner: A quiet daily writing page. Write the update, hit Done, keep a durable
 status: live
 shippedAt: 2026-06-06
 tags: [writing, markdown, workflow]
-previewLabel: GitHub Pages
+screenshot: /thumbnails/heartbeats.svg
+thumbnailAlt: A calm writing page with a pulse through its daily entry
 links:
   - { label: "Project link", url: "#" }
 ---

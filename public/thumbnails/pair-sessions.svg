@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">Design Pair Sessions cover</title><desc id="desc">Two collaborators passing control across three practical sessions.</desc>
+  <rect width="1280" height="800" fill="#f0e6d2"/>
+  <path d="M0 160H1280M0 640H1280M160 0V800M1120 0V800" stroke="#24304a" stroke-opacity=".08"/>
+  <path d="M318 400C430 224 514 224 640 400s210 176 322 0" fill="none" stroke="#315bea" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="270" cy="400" r="118" fill="#f3cf56" stroke="#24304a" stroke-width="13"/>
+  <circle cx="1010" cy="400" r="118" fill="#65c79a" stroke="#24304a" stroke-width="13"/>
+  <path d="M238 362l90 38-90 38 22-38z" fill="#24304a"/><path d="M1042 362l-90 38 90 38-22-38z" fill="#24304a"/>
+  <g stroke="#24304a" stroke-width="11"><circle cx="492" cy="258" r="45" fill="#fffdf8"/><circle cx="640" cy="400" r="45" fill="#fffdf8"/><circle cx="788" cy="542" r="45" fill="#fffdf8"/></g>
+  <g fill="#24304a"><circle cx="492" cy="258" r="10"/><circle cx="640" cy="400" r="10"/><circle cx="788" cy="542" r="10"/></g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">Design Review Mode cover</title><desc id="desc">A browser prototype marked with three contextual review comments.</desc>
+  <rect width="1280" height="800" fill="#eae4f3"/>
+  <rect x="112" y="96" width="1056" height="608" rx="30" fill="#fffdf8" stroke="#24304a" stroke-width="13"/>
+  <path d="M112 182H1168" stroke="#24304a" stroke-width="13"/>
+  <circle cx="168" cy="139" r="12" fill="#ef775d"/><circle cx="208" cy="139" r="12" fill="#f3cf56"/><circle cx="248" cy="139" r="12" fill="#65c79a"/>
+  <rect x="180" y="246" width="348" height="392" rx="18" fill="#315bea"/><circle cx="354" cy="380" r="88" fill="#f3cf56"/><rect x="594" y="246" width="390" height="42" rx="21" fill="#24304a"/><rect x="594" y="330" width="470" height="18" rx="9" fill="#24304a" opacity=".28"/><rect x="594" y="376" width="410" height="18" rx="9" fill="#24304a" opacity=".18"/>
+  <g stroke="#24304a" stroke-width="8">
+    <circle cx="550" cy="274" r="38" fill="#ef775d"/><path d="M550 258v32" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="1008" cy="438" r="38" fill="#65c79a"/><path d="M999 422v32M1017 422v32" stroke-linecap="round"/>
+    <circle cx="516" cy="606" r="38" fill="#f3cf56"/><path d="M502 590v32M516 590v32M530 590v32" stroke-linecap="round"/>
+  </g>
+</svg>
