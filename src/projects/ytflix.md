@@ -6,7 +6,7 @@ status: live
 shippedAt: 2026-09-09
 tags: [chrome-extension, youtube, javascript, open-source, stupid-project]
 links:
-  - { label: "Get YTFLIX on GitHub", url: "#" }
+  - { label: "Get YTFLIX on GitHub", url: "https://github.com/amitdialpad/ytflix-extension" }
 ---
 
 ## Useless project #4984

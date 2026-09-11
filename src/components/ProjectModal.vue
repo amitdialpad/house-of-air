@@ -13,7 +13,7 @@
             class="screenshot screenshot-link"
           >
             <img :src="project.screenshot" :alt="project.thumbnailAlt || `Visual preview of ${project.title}`" />
-            <div class="screenshot-cta" aria-hidden="true">Open link</div>
+            <div class="screenshot-cta" aria-hidden="true">Preview URL</div>
           </a>
           <div v-else-if="project.screenshot" class="screenshot">
             <img :src="project.screenshot" :alt="project.thumbnailAlt || `Visual preview of ${project.title}`" />
@@ -33,8 +33,9 @@
             target="_blank"
             rel="noopener"
             class="primary-cta"
+            :aria-label="`Preview URL for ${project.title}`"
           >
-            {{ primaryLink.label }} <span class="arrow" aria-hidden="true">→</span>
+            Preview URL <span class="arrow" aria-hidden="true">↗</span>
           </a>
 
           <article class="body" v-html="project.bodyHtml"></article>
@@ -75,14 +76,12 @@ function isRealUrl(u) {
 
 const primaryLink = computed(() => {
   const links = props.project?.links || []
-  const first = links[0]
-  return first && isRealUrl(first.url) ? first : null
+  return links.find(link => isRealUrl(link.url)) || null
 })
 
 const otherLinks = computed(() => {
   const links = props.project?.links || []
-  const sliced = primaryLink.value ? links.slice(1) : links
-  return sliced.filter(l => isRealUrl(l.url))
+  return links.filter(link => isRealUrl(link.url) && link !== primaryLink.value)
 })
 
 function handleKey(e) {
@@ -137,9 +136,9 @@ const dateFraming = computed(() => {
   background: var(--surface-raised);
   border: 1px solid var(--line-strong);
   border-radius: 8px;
-  max-width: 920px;
+  max-width: 800px;
   width: 100%;
-  padding: clamp(28px, 5vw, 54px);
+  padding: clamp(26px, 4vw, 44px);
   position: relative;
   margin: auto;
 }
@@ -242,7 +241,7 @@ const dateFraming = computed(() => {
 
 h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-size: clamp(2.45rem, 6vw, 4.25rem);
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 0.9;
@@ -254,7 +253,7 @@ h1 {
 
 .one-liner {
   max-width: 66ch;
-  font-size: clamp(1.08rem, 2vw, 1.3rem);
+  font-size: clamp(1.02rem, 1.8vw, 1.18rem);
   color: var(--text-muted);
   margin: 0 0 28px;
   line-height: 1.6;
@@ -271,7 +270,7 @@ h1 {
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
-  margin: 0 0 40px;
+  margin: 0 0 32px;
   border: 1px solid var(--accent);
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
   font-family: var(--font-sans);
@@ -279,7 +278,7 @@ h1 {
 
 .primary-cta .arrow {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.96rem;
   transition: transform 160ms ease;
 }
 
@@ -302,12 +301,12 @@ h1 {
 .body :deep(h2) {
   color: var(--accent);
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.01em;
   line-height: 0.95;
-  margin: 42px 0 16px;
+  margin: 34px 0 14px;
   text-wrap: balance;
 }
 
