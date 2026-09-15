@@ -4,8 +4,6 @@
     class="project-row"
     :class="project.status"
   >
-    <span class="number" aria-hidden="true">{{ paddedIndex }}</span>
-
     <div class="summary">
       <div class="meta">
         <StatusPill :status="project.status" />
@@ -25,15 +23,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import StatusPill from './StatusPill.vue'
 
-const props = defineProps({
-  project: { type: Object, required: true },
-  index: { type: Number, required: true }
+defineProps({
+  project: { type: Object, required: true }
 })
-
-const paddedIndex = computed(() => String(props.index).padStart(2, '0'))
 
 function formatDate(iso) {
   if (!iso) return ''
@@ -46,12 +40,11 @@ function formatDate(iso) {
 
 <style scoped>
 .project-row {
-  --status-color: var(--status-live);
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) 38px;
-  gap: clamp(16px, 2.6vw, 34px);
+  grid-template-columns: minmax(0, 1fr) 38px;
+  gap: clamp(20px, 2.6vw, 34px);
   align-items: center;
-  padding: 14px 18px 14px 14px;
+  padding: clamp(22px, 2.4vw, 28px) clamp(20px, 2.6vw, 30px);
   border: 1px solid var(--line);
   border-radius: 18px;
   background: color-mix(in oklch, var(--surface) 92%, transparent);
@@ -61,12 +54,6 @@ function formatDate(iso) {
   transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease, box-shadow 220ms ease;
   min-width: 0;
 }
-
-.project-row.live { --status-color: var(--status-live); }
-.project-row.building { --status-color: var(--status-building); }
-.project-row.paused { --status-color: var(--status-paused); }
-.project-row.archived { --status-color: var(--status-archived); }
-.project-row.idea { --status-color: var(--status-idea); }
 
 .project-row:hover {
   transform: translateY(-3px);
@@ -81,21 +68,6 @@ function formatDate(iso) {
 .project-row:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 8px;
-}
-
-.number {
-  align-self: start;
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  color: var(--text);
-  background: var(--status-color);
-  border-radius: 50%;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 650;
-  line-height: 1;
 }
 
 .summary {
@@ -176,15 +148,15 @@ function formatDate(iso) {
 
 @media (max-width: 880px) {
   .project-row {
-    grid-template-columns: 44px minmax(0, 1fr) 38px;
+    grid-template-columns: minmax(0, 1fr) 38px;
     align-items: start;
   }
 
   .summary {
-    grid-column: 2;
+    grid-column: 1;
   }
 
-  .open-arrow { grid-column: 3; }
+  .open-arrow { grid-column: 2; }
 
 }
 
@@ -199,15 +171,10 @@ function formatDate(iso) {
     overflow-x: clip;
   }
 
-  .number,
   .summary,
   .open-arrow {
     grid-column: 1;
     max-width: 100%;
-  }
-
-  .number {
-    font-size: 0.68rem;
   }
 
   .open-arrow { display: none; }

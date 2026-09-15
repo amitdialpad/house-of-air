@@ -2,6 +2,12 @@
   <a href="#main-grid" class="skip-link">Skip to projects</a>
   <div class="home" :inert="!!modalProject">
     <header class="hero">
+      <svg class="hero-air-map" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="hero-air-current" d="M-120 128 C 126 36 288 188 492 116 S 826 42 1018 126 S 1264 196 1370 70" />
+        <path class="hero-air-current hero-air-current-b" d="M-160 278 C 92 202 252 354 470 270 S 824 182 1038 276 S 1270 358 1390 232" />
+        <path class="hero-air-current hero-air-current-c" d="M-140 432 C 116 346 290 496 510 414 S 842 330 1054 424 S 1278 496 1400 380" />
+      </svg>
+
       <div class="hero-lockup">
         <div class="kicker">
           <span>Personal utility archive</span>
@@ -41,12 +47,7 @@
 
     <main id="main-grid" class="project-board" :aria-label="boardLabel" @pointerdown="acknowledgeProjectPress">
       <TransitionGroup name="card">
-        <ProjectCard
-          v-for="(p, index) in filteredProjects"
-          :key="p.slug"
-          :project="p"
-          :index="index + 1"
-        />
+        <ProjectCard v-for="p in filteredProjects" :key="p.slug" :project="p" />
 
         <div v-if="activeFilter === 'all'" key="empty-card" class="card-empty">
           <div class="empty-inner">
@@ -165,7 +166,49 @@ onUnmounted(() => window.clearTimeout(airDotResetTimer))
   border-radius: 50%;
   border: 34px solid var(--sun);
   opacity: 0.9;
+  z-index: 0;
   pointer-events: none;
+}
+
+.hero-air-map {
+  position: absolute;
+  inset: -2% -8%;
+  z-index: 0;
+  width: 116%;
+  height: 104%;
+  opacity: 0.2;
+  pointer-events: none;
+  animation: hero-air-drift 14s linear infinite alternate;
+}
+
+.hero-air-current {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 2 18;
+  vector-effect: non-scaling-stroke;
+}
+
+.hero-air-current-b {
+  stroke-dasharray: 1 25;
+  opacity: 0.8;
+}
+
+.hero-air-current-c {
+  stroke-dasharray: 2 31;
+  opacity: 0.65;
+}
+
+@keyframes hero-air-drift {
+  from {
+    opacity: 0.18;
+    transform: translate3d(-4%, -1.5%, 0);
+  }
+  to {
+    opacity: 0.34;
+    transform: translate3d(4%, 1.5%, 0);
+  }
 }
 
 .hero-lockup,
@@ -220,7 +263,7 @@ onUnmounted(() => window.clearTimeout(airDotResetTimer))
   border-radius: 50%;
   background: var(--accent);
   flex: 0 0 auto;
-  animation: air-dot-breathe 8s linear infinite;
+  animation: air-dot-breathe 6s var(--ease-in-out) infinite;
 }
 
 .hero h1 i::before,
@@ -248,22 +291,22 @@ onUnmounted(() => window.clearTimeout(airDotResetTimer))
 .hero h1 i::after {
   opacity: 0;
   transform: scale(0.92);
-  animation: air-dot-halo 8s linear infinite;
+  animation: air-dot-halo 6s var(--ease-in-out) infinite;
 }
 
 @keyframes air-dot-breathe {
-  0%, 72%, 84%, 100% { transform: scale(1); }
-  78% { transform: scale(1.07); }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
 }
 
 @keyframes air-dot-halo {
-  0%, 70%, 88%, 100% {
+  0%, 100% {
     opacity: 0;
     transform: scale(0.92);
   }
-  78% {
-    opacity: 0.16;
-    transform: scale(1.55);
+  50% {
+    opacity: 0.22;
+    transform: scale(1.48);
   }
 }
 
@@ -538,9 +581,15 @@ onUnmounted(() => window.clearTimeout(airDotResetTimer))
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-air-map,
   .hero h1 i,
   .hero h1 i::after {
     animation: none;
+  }
+
+  .hero-air-map {
+    opacity: 0.2;
+    transform: none;
   }
 
   .hero h1 i::before {
