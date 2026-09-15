@@ -112,16 +112,23 @@ const visibleStatuses = computed(() =>
 
 @media (max-width: 620px) {
   .legend {
-    display: flex;
-    justify-content: flex-start;
-    gap: 7px;
-    max-width: 22rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    max-width: none;
   }
 
   .item {
     justify-content: flex-start;
-    min-height: 34px;
-    padding: 6px 0 6px 10px;
+    min-width: 0;
+    width: 100%;
+    min-height: 38px;
+    padding: 7px 10px;
+  }
+
+  .count {
+    margin-left: auto;
   }
 }
 </style>

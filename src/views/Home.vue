@@ -151,6 +151,13 @@ function setFilter(status) {
   pointer-events: none;
 }
 
+.hero-lockup,
+.hero-copy,
+.drawer-tools {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-lockup { min-width: 0; }
 
 .kicker {
@@ -347,6 +354,22 @@ function setFilter(status) {
     align-items: start;
   }
 
+  .identity {
+    grid-template-columns: 1fr;
+  }
+
+  .expansion {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    margin: 20px 0 0;
+  }
+
+  .expansion span:not(:last-child)::after {
+    content: " /";
+    color: var(--accent);
+  }
+
   .hero-copy {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -359,22 +382,35 @@ function setFilter(status) {
 
 @media (max-width: 620px) {
   .home {
-    padding: 16px 12px 44px;
+    padding: 12px 12px 40px;
     max-width: 100vw;
     overflow-x: clip;
   }
 
   .hero {
-    gap: 36px;
-    padding: 22px 18px 24px;
+    gap: 28px;
+    padding: 20px 18px 22px;
     margin-bottom: 16px;
     border-radius: 20px;
   }
 
+  .hero::after {
+    width: 150px;
+    height: 150px;
+    right: -72px;
+    top: -68px;
+    border-width: 24px;
+  }
+
+  .kicker {
+    margin-bottom: 26px;
+    font-size: 0.64rem;
+  }
+
   .hero h1 {
     display: block;
-    font-size: clamp(6.2rem, 33vw, 9rem);
-    line-height: 0.78;
+    font-size: clamp(5rem, 28vw, 8rem);
+    line-height: 0.76;
     white-space: nowrap;
   }
 
@@ -391,25 +427,49 @@ function setFilter(status) {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.35em;
-    margin: 20px 0 0;
+    margin: 16px 0 0;
     font-size: 0.78rem;
   }
 
-  .expansion span:not(:last-child)::after {
-    content: " /";
-    color: var(--accent);
-  }
   .kicker span:last-child { display: none; }
   .hero-copy { display: block; }
 
   .tagline {
-    font-size: clamp(1.4rem, 7vw, 1.8rem);
-    margin-bottom: 34px;
+    font-size: clamp(1.32rem, 6.5vw, 1.72rem);
+    margin-bottom: 28px;
   }
 
-  .drawer-tools { grid-template-columns: 1fr; }
+  .drawer-tools {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 20px;
+  }
   .drawer-label { width: 210px; }
   .footer { flex-direction: column; }
 
+}
+
+@media (max-width: 360px) {
+  .home {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .hero {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .hero::after {
+    width: 132px;
+    height: 132px;
+    right: -64px;
+    top: -58px;
+    border-width: 20px;
+  }
+
+  .expansion {
+    font-size: 0.73rem;
+  }
 }
 </style>

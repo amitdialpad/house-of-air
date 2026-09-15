@@ -129,6 +129,8 @@ const dateFraming = computed(() => {
   justify-content: center;
   z-index: 40;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   padding: clamp(18px, 4vw, 52px) 20px;
 }
 
@@ -409,21 +411,67 @@ h1 {
   }
 
   .panel {
-    padding: 72px 20px 44px;
+    padding:
+      max(64px, calc(env(safe-area-inset-top) + 56px))
+      max(16px, calc(env(safe-area-inset-right) + 16px))
+      max(36px, calc(env(safe-area-inset-bottom) + 28px))
+      max(16px, calc(env(safe-area-inset-left) + 16px));
     border-radius: 0;
     min-height: 100vh;
+    min-height: 100dvh;
     border-left: 0;
     border-right: 0;
   }
 
+  .close {
+    top: max(12px, env(safe-area-inset-top));
+    right: max(12px, env(safe-area-inset-right));
+  }
+
   .screenshot,
   .screenshot-link {
-    margin-bottom: 26px;
+    margin-bottom: 22px;
+  }
+
+  .hero-meta {
+    gap: 8px 12px;
+    padding-right: 44px;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 11vw, 2.7rem);
+    line-height: 0.94;
+    overflow-wrap: anywhere;
+  }
+
+  .one-liner {
+    margin-bottom: 22px;
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
   .primary-cta {
     width: 100%;
+    min-height: 48px;
     justify-content: center;
+    margin-bottom: 26px;
+  }
+
+  .body {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .body :deep(h2) {
+    font-size: clamp(1.35rem, 7.5vw, 1.75rem);
+    margin-top: 28px;
+  }
+
+  .meta-footer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 38px;
   }
 }
 </style>

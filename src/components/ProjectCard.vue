@@ -191,10 +191,11 @@ function formatDate(iso) {
 @media (max-width: 560px) {
   .project-row {
     grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 26px 0;
-    width: min(100%, 22rem);
-    max-width: 22rem;
+    gap: 12px;
+    padding: 22px 18px 24px;
+    width: 100%;
+    max-width: none;
+    border-radius: 16px;
     overflow-x: clip;
   }
 
@@ -212,11 +213,24 @@ function formatDate(iso) {
   .open-arrow { display: none; }
 
   .title {
-    font-size: clamp(2rem, 12vw, 3rem);
+    font-size: clamp(1.85rem, 10.5vw, 2.6rem);
+    line-height: 1.02;
   }
 
   .one-liner {
-    max-width: 32ch;
+    max-width: none;
+    margin-bottom: 16px;
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  .meta {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    overflow-wrap: anywhere;
   }
 }
 </style>

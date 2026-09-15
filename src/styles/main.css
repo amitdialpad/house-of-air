@@ -12,9 +12,9 @@
   --text-muted: oklch(50% 0.025 255);
   --text-soft: oklch(62% 0.022 255);
 
-  --accent: oklch(63% 0.22 258);
-  --accent-dark: oklch(49% 0.22 258);
-  --accent-hover: oklch(55% 0.23 258);
+  --accent: oklch(50% 0.145 151);
+  --accent-dark: oklch(39% 0.115 151);
+  --accent-hover: oklch(44% 0.135 151);
   --accent-ink: oklch(99% 0 0);
   --signal: oklch(72% 0.13 203);
   --sun: oklch(86% 0.15 88);
@@ -22,7 +22,7 @@
   --clay: oklch(70% 0.17 35);
   --plum: oklch(70% 0.13 311);
   --backdrop: oklch(24% 0.035 255 / 0.72);
-  --focus: oklch(58% 0.23 258 / 0.92);
+  --focus: oklch(47% 0.145 151 / 0.92);
 
   --shadow-soft: 0 22px 70px oklch(36% 0.035 255 / 0.08);
   --shadow-card: 0 18px 32px oklch(36% 0.035 255 / 0.11);
@@ -88,7 +88,7 @@ a { color: inherit; }
   overflow: hidden;
   pointer-events: none;
   background:
-    linear-gradient(115deg, transparent 0 28%, oklch(63% 0.22 258 / 0.035) 42%, transparent 58% 100%),
+    linear-gradient(115deg, transparent 0 28%, oklch(50% 0.145 151 / 0.035) 42%, transparent 58% 100%),
     linear-gradient(72deg, transparent 0 44%, oklch(86% 0.15 88 / 0.05) 52%, transparent 64% 100%);
   background-size: 190% 100%, 170% 100%;
   animation: atmosphere-sweep 34s linear infinite, atmosphere-breathe 18s ease-in-out infinite alternate;
@@ -119,7 +119,7 @@ a { color: inherit; }
     repeating-linear-gradient(
       112deg,
       transparent 0 84px,
-      oklch(63% 0.22 258 / 0.03) 85px,
+      oklch(50% 0.145 151 / 0.03) 85px,
       transparent 87px 176px
     );
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 70%, transparent 100%);
