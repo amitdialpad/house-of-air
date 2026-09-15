@@ -10,7 +10,7 @@
 
         <div class="identity">
           <h1 aria-label="AIR">
-            <span>A</span><span>I</span><span>R</span><i aria-hidden="true"></i>
+            <span>A</span><span>I</span><span>R</span><i :class="{ 'is-reacting': airDotReacting }" aria-hidden="true"></i>
           </h1>
           <p class="expansion" aria-label="Amit's Intelligent Resources">
             <span>Amit’s</span>
@@ -39,7 +39,7 @@
       </div>
     </header>
 
-    <main id="main-grid" class="project-board" :aria-label="boardLabel">
+    <main id="main-grid" class="project-board" :aria-label="boardLabel" @pointerdown="acknowledgeProjectPress">
       <TransitionGroup name="card">
         <ProjectCard
           v-for="(p, index) in filteredProjects"
@@ -67,7 +67,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { projects, STATUSES, getProject } from '../projects.js'
 import ProjectCard from '../components/ProjectCard.vue'
@@ -88,6 +88,8 @@ function closeModal() {
 }
 
 const activeFilter = ref('all')
+const airDotReacting = ref(false)
+let airDotResetTimer
 
 const counts = computed(() => {
   const c = Object.fromEntries(Object.keys(STATUSES).map(k => [k, 0]))
@@ -108,9 +110,24 @@ const boardLabel = computed(() => {
   return `${STATUSES[activeFilter.value]?.label || activeFilter.value} projects`
 })
 
-function setFilter(status) {
-  activeFilter.value = status
+function acknowledgeAirDot() {
+  window.clearTimeout(airDotResetTimer)
+  airDotReacting.value = true
+  airDotResetTimer = window.setTimeout(() => {
+    airDotReacting.value = false
+  }, 160)
 }
+
+function acknowledgeProjectPress(event) {
+  if (event.target.closest('.project-row')) acknowledgeAirDot()
+}
+
+function setFilter(status, event) {
+  activeFilter.value = status
+  if (event?.detail > 0) acknowledgeAirDot()
+}
+
+onUnmounted(() => window.clearTimeout(airDotResetTimer))
 </script>
 
 <style scoped>
@@ -195,12 +212,59 @@ function setFilter(status) {
 }
 
 .hero h1 i {
+  position: relative;
+  isolation: isolate;
   width: 0.16em;
   height: 0.16em;
   margin-left: 0.08em;
   border-radius: 50%;
   background: var(--accent);
   flex: 0 0 auto;
+  animation: air-dot-breathe 8s linear infinite;
+}
+
+.hero h1 i::before,
+.hero h1 i::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  z-index: -1;
+  border: 1px solid var(--accent);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero h1 i::before {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out);
+}
+
+.hero h1 i.is-reacting::before {
+  opacity: 0.24;
+  transform: scale(1.45);
+}
+
+.hero h1 i::after {
+  opacity: 0;
+  transform: scale(0.92);
+  animation: air-dot-halo 8s linear infinite;
+}
+
+@keyframes air-dot-breathe {
+  0%, 72%, 84%, 100% { transform: scale(1); }
+  78% { transform: scale(1.07); }
+}
+
+@keyframes air-dot-halo {
+  0%, 70%, 88%, 100% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  78% {
+    opacity: 0.16;
+    transform: scale(1.55);
+  }
 }
 
 .expansion {
@@ -470,6 +534,22 @@ function setFilter(status) {
 
   .expansion {
     font-size: 0.73rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 i,
+  .hero h1 i::after {
+    animation: none;
+  }
+
+  .hero h1 i::before {
+    transform: none;
+  }
+
+  .hero h1 i.is-reacting::before {
+    opacity: 0.18;
+    transform: none;
   }
 }
 </style>

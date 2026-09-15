@@ -42,6 +42,9 @@
   --space-7: 48px;
   --space-8: 72px;
 
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
   --font-display: "Arial Black", "Avenir Next", "Helvetica Neue", sans-serif;
   --font-serif: "Iowan Old Style", "Palatino Linotype", "Palatino", "Baskerville", Georgia, serif;
   --font-sans: "Avenir Next", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -91,7 +94,7 @@ a { color: inherit; }
     linear-gradient(115deg, transparent 0 28%, oklch(50% 0.145 151 / 0.035) 42%, transparent 58% 100%),
     linear-gradient(72deg, transparent 0 44%, oklch(86% 0.15 88 / 0.05) 52%, transparent 64% 100%);
   background-size: 190% 100%, 170% 100%;
-  animation: atmosphere-sweep 34s linear infinite, atmosphere-breathe 18s ease-in-out infinite alternate;
+  animation: atmosphere-breathe 18s var(--ease-in-out) infinite alternate;
 }
 
 .site-atmosphere::before,
@@ -125,7 +128,7 @@ a { color: inherit; }
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 70%, transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 70%, transparent 100%);
   opacity: 0.7;
-  animation: atmosphere-draft 26s linear infinite;
+  animation: atmosphere-draft 26s var(--ease-in-out) infinite alternate;
 }
 
 .air-map {
@@ -144,14 +147,14 @@ a { color: inherit; }
   stroke-dasharray: 2 22;
   vector-effect: non-scaling-stroke;
   opacity: 0.34;
-  animation: air-current 18s linear infinite;
+  animation: air-current 18s var(--ease-in-out) infinite alternate;
 }
 
 .air-current-b {
-  stroke: var(--signal);
+  stroke: var(--accent);
   stroke-dasharray: 1 28;
   animation-duration: 24s;
-  animation-direction: reverse;
+  animation-direction: alternate-reverse;
   opacity: 0.24;
 }
 
@@ -162,14 +165,9 @@ a { color: inherit; }
   opacity: 0.18;
 }
 
-@keyframes atmosphere-sweep {
-  from { background-position: -90% 0, 80% 0; }
-  to { background-position: 110% 0, -70% 0; }
-}
-
 @keyframes atmosphere-breathe {
-  from { filter: saturate(0.92) brightness(0.96); }
-  to { filter: saturate(1.08) brightness(1.04); }
+  from { opacity: 0.82; }
+  to { opacity: 1; }
 }
 
 @keyframes atmosphere-grid {
@@ -183,8 +181,8 @@ a { color: inherit; }
 }
 
 @keyframes air-current {
-  from { stroke-dashoffset: 0; transform: translateX(-18px); }
-  to { stroke-dashoffset: -240; transform: translateX(18px); }
+  from { transform: translate3d(-18px, -4px, 0); }
+  to { transform: translate3d(18px, 4px, 0); }
 }
 
 /* Skip-to-content link for keyboard users */

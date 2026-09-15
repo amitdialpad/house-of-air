@@ -5,7 +5,7 @@
       class="item all"
       :class="{ active: active === 'all' }"
       :aria-pressed="active === 'all'"
-      @click="$emit('filter', 'all')"
+      @click="$emit('filter', 'all', $event)"
     >
       <span class="label">All</span>
       <span class="count">{{ total }}</span>
@@ -18,7 +18,7 @@
       class="item"
       :class="{ active: active === key }"
       :aria-pressed="active === key"
-      @click="$emit('filter', active === key ? 'all' : key)"
+      @click="$emit('filter', active === key ? 'all' : key, $event)"
     >
       <span class="dot" :style="{ backgroundColor: status.color }" aria-hidden="true"></span>
       <span class="label">{{ status.label }}</span>
